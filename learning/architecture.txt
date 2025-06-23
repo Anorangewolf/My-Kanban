@@ -1,6 +1,0 @@
-Flutter 3.x + Dart NNBD  
-   │  
-   ├── UI 层：Riverpod + fluent_ui + 响应式布局  
-   ├── 数据层：Isar (加密) + json_serializable  
-   ├── 桌面层：tray_manager + hotkey_manager  
-   └── 工具链：Melos + Very Good Analysis + GitHub Actions
