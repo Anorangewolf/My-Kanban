@@ -1,6 +1,16 @@
 # mykanban
 
-A new Flutter project.
+A new Flutter project for Author to learn and practice flutter.
+
+This project is a simple offline kanban board application that allows users to create and manage their tasks.
+
+## Features
+
+- Create new tasks
+- Edit existing tasks
+- Delete tasks
+- Drag and drop tasks to different columns
+- View task details
 
 ## Getting Started
 
