@@ -6,10 +6,10 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 const double alpha = 1;
 
 /// 默认色相
-const double hue = 62;
+const double hue = 345;
 
 /// 默认饱和度
-const double saturation = 0.62;
+const double saturation = 0.58;
 
 /// 默认明度
 const double value = 0.62;
@@ -106,13 +106,13 @@ abstract class ThemeColors {
   FuncColors get warning;
 
   /// 白色
-  GrayScale gray0 = const HSVColor.fromAHSV(1, 0, 0, 1).toColor();
+  GrayScale gray0 = const HSVColor.fromAHSV(1, 0, 0, 0.96).toColor();
 
   /// 灰度12%
   GrayScale gray1 = const HSVColor.fromAHSV(1, 0, 0, 0.88).toColor();
 
-  /// 灰度26%
-  GrayScale gray2 = const HSVColor.fromAHSV(1, 0, 0, 0.74).toColor();
+  /// 灰度25%
+  GrayScale gray2 = const HSVColor.fromAHSV(1, 0, 0, 0.75).toColor();
 
   /// 灰度38%
   GrayScale gray3 = const HSVColor.fromAHSV(1, 0, 0, 0.62).toColor();
@@ -120,11 +120,11 @@ abstract class ThemeColors {
   /// 灰度54%
   GrayScale gray4 = const HSVColor.fromAHSV(1, 0, 0, 0.46).toColor();
 
-  /// 灰度87%
-  GrayScale gray5 = const HSVColor.fromAHSV(1, 0, 0, 0.13).toColor();
+  /// 灰度76%
+  GrayScale gray5 = const HSVColor.fromAHSV(1, 0, 0, 0.24).toColor();
 
   /// 黑色
-  GrayScale gray6 = const HSVColor.fromAHSV(1, 0, 0, 0).toColor();
+  GrayScale gray6 = const HSVColor.fromAHSV(1, 0, 0, 0.04).toColor();
 
   /// 改变基准色
   void changeHue(double newhue) {
@@ -137,36 +137,65 @@ abstract class ThemeColors {
 /// 通过用户输入的基准色primary（即primary)，
 /// 计算生成一整套主题颜色。
 class LightThemeColors extends ThemeColors {
-  // TODO(Anorangewolf): 写公式，可直接设置明度和饱和度，计算色相即可.
   @override
   BasicColors get primaryVariant => HSVColor.fromAHSV(
     alpha,
-    _basehue + 30,
+    _basehue + (_basehue < 330 ? 30 : -330),
     saturation,
     value,
   ).toColor();
   @override
-  BasicColors get secondary => primary;
+  BasicColors get secondary => HSVColor.fromAHSV(
+    alpha,
+    _basehue + (_basehue < 240 ? 120 : -240),
+    0.38,
+    0.72,
+  ).toColor();
   @override
-  BasicColors get secondaryVariant => primary;
+  BasicColors get secondaryVariant => HSVColor.fromAHSV(
+    alpha,
+    _basehue + (_basehue > 120 ? -120 : 240),
+    0.38,
+    0.72,
+  ).toColor();
   @override
-  BasicColors get background => primary;
+  BasicColors get background => HSVColor.fromAHSV(
+    alpha,
+    _basehue,
+    0.04,
+    0.96,
+  ).toColor();
   @override
-  BasicColors get surface => primary;
+  BasicColors get surface => HSVColor.fromAHSV(
+    0.38,
+    _basehue + (_basehue > 180 ? -180 : 180),
+    0.98,
+    0.04,
+  ).toColor();
   @override
-  TxtColors get onPrimary => primary;
+  TxtColors get onPrimary => gray6;
   @override
-  TxtColors get onSecondary => primary;
+  TxtColors get onSecondary => gray5;
   @override
-  TxtColors get onBackground => primary;
+  TxtColors get onBackground => HSVColor.fromAHSV(
+    alpha,
+    _basehue,
+    saturation - 0.2,
+    value - 0.1,
+  ).toColor();
   @override
-  TxtColors get onSurface => primary;
+  TxtColors get onSurface => HSVColor.fromAHSV(
+    alpha,
+    _basehue,
+    saturation - 0.24,
+    value - 0.24,
+  ).toColor();
   @override
-  FuncColors get error => primary;
+  FuncColors get error => Colors.pink.shade800;
   @override
-  FuncColors get success => primary;
+  FuncColors get success => Colors.lightGreen.shade800;
   @override
-  FuncColors get warning => primary;
+  FuncColors get warning => Colors.yellow.shade800;
 }
 
 /// 黑暗主题类，基于一套颜色计算公式，
