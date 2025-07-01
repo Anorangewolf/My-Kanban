@@ -11,6 +11,7 @@ class ColorPaletteViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('配色板预览')),
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -26,7 +27,8 @@ class ColorPaletteViewer extends StatelessWidget {
               _buildColorCard('次要色', t.secondary),
               _buildColorCard('次要色变体', t.secondaryVariant),
               _buildColorCard('背景色', t.background),
-              _buildColorCard('二级背景色', t.surface),
+              _buildColorCard('表面背景色', t.surface),
+              _buildColorCard('蒙版', t.mask),
               _buildColorCard('主文字', t.onPrimary),
               _buildColorCard('次要文字', t.onSecondary),
               _buildColorCard('背景文字', t.onBackground),
