@@ -6,7 +6,7 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 const double alpha = 1;
 
 /// 默认色相
-const double hue = 345;
+const double hue = 62;
 
 /// 默认饱和度
 const double saturation = 0.58;
@@ -47,7 +47,8 @@ class ColorFactory {
 /// - 次要色：secondary
 /// - 次要色变体：secondaryVariant
 /// - 背景色：background
-/// - 二级背景色：surface
+/// - 表面背景色：surface
+/// - 蒙版：mask
 /// - 主文字：onPrimary
 /// - 次要文字：onSecondary
 /// - 背景文字：onBackground
@@ -81,8 +82,11 @@ abstract class ThemeColors {
   /// 背景色
   BasicColors get background;
 
-  /// 二级背景色
+  /// 表面背景色
   BasicColors get surface;
+
+  /// 蒙版
+  BasicColors get mask;
 
   /// 主文字
   TxtColors get onPrimary;
@@ -139,21 +143,21 @@ abstract class ThemeColors {
 class LightThemeColors extends ThemeColors {
   @override
   BasicColors get primaryVariant => HSVColor.fromAHSV(
-    alpha,
+    alpha * (alpha * 1.25 > 1 ? (1 / alpha) : 1.25),
     _basehue + (_basehue < 330 ? 30 : -330),
     saturation,
     value,
   ).toColor();
   @override
   BasicColors get secondary => HSVColor.fromAHSV(
-    alpha,
+    alpha * (alpha * 1.25 > 1 ? (1 / alpha) : 1.25),
     _basehue + (_basehue < 240 ? 120 : -240),
     0.38,
     0.72,
   ).toColor();
   @override
   BasicColors get secondaryVariant => HSVColor.fromAHSV(
-    alpha,
+    alpha * (alpha * 1.25 > 1 ? (1 / alpha) : 1.25),
     _basehue + (_basehue > 120 ? -120 : 240),
     0.38,
     0.72,
@@ -167,7 +171,14 @@ class LightThemeColors extends ThemeColors {
   ).toColor();
   @override
   BasicColors get surface => HSVColor.fromAHSV(
-    0.38,
+    1,
+    _basehue + (_basehue < 180 ? 180 : -180),
+    0.04,
+    0.74,
+  ).toColor();
+  @override
+  BasicColors get mask => HSVColor.fromAHSV(
+    0.38 * alpha,
     _basehue + (_basehue > 180 ? -180 : 180),
     0.98,
     0.04,
@@ -178,14 +189,14 @@ class LightThemeColors extends ThemeColors {
   TxtColors get onSecondary => gray5;
   @override
   TxtColors get onBackground => HSVColor.fromAHSV(
-    alpha,
+    alpha * (alpha * 1.25 > 1 ? (1 / alpha) : 1.25),
     _basehue,
     saturation - 0.2,
     value - 0.1,
   ).toColor();
   @override
   TxtColors get onSurface => HSVColor.fromAHSV(
-    alpha,
+    1,
     _basehue,
     saturation - 0.24,
     value - 0.24,
@@ -202,29 +213,92 @@ class LightThemeColors extends ThemeColors {
 /// 通过用户输入的基准色primary（即primary)，
 /// 计算生成一整套主题颜色。
 class DarkThemeColors extends ThemeColors {
-  // TODO(Anorangewolf): 这里也要写公式，注意和明亮主题的明度和饱和度设置逻辑不同.
   @override
-  BasicColors get primaryVariant => primary;
+  BasicColors get primary => HSVColor.fromAHSV(
+    alpha *
+        (alpha * 1.25 > 1
+            ? (1 / alpha)
+            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+    _basehue,
+    saturation + 0.08,
+    value + 0.22,
+  ).toColor();
   @override
-  BasicColors get secondary => primary;
+  BasicColors get primaryVariant => HSVColor.fromAHSV(
+    alpha *
+        (alpha * 1.25 > 1
+            ? (1 / alpha)
+            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+    _basehue + (_basehue < 330 ? 30 : -330),
+    saturation + 0.08,
+    value + 0.22,
+  ).toColor();
   @override
-  BasicColors get secondaryVariant => primary;
+  BasicColors get secondary => HSVColor.fromAHSV(
+    alpha *
+        (alpha * 1.25 > 1
+            ? (1 / alpha)
+            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+    _basehue + (_basehue < 240 ? 120 : -240),
+    0.30,
+    0.72,
+  ).toColor();
   @override
-  BasicColors get background => primary;
+  BasicColors get secondaryVariant => HSVColor.fromAHSV(
+    alpha *
+        (alpha * 1.25 > 1
+            ? (1 / alpha)
+            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+    _basehue + (_basehue > 120 ? -120 : 240),
+    0.30,
+    0.72,
+  ).toColor();
   @override
-  BasicColors get surface => primary;
+  BasicColors get background => HSVColor.fromAHSV(
+    alpha,
+    _basehue,
+    0.04,
+    0.14,
+  ).toColor();
   @override
-  TxtColors get onPrimary => primary;
+  BasicColors get surface => HSVColor.fromAHSV(
+    1,
+    _basehue + (_basehue < 180 ? 180 : -180),
+    0.04,
+    0.36,
+  ).toColor();
   @override
-  TxtColors get onSecondary => primary;
+  BasicColors get mask => HSVColor.fromAHSV(
+    alpha * 0.54,
+    _basehue + (_basehue > 180 ? -180 : 180),
+    0.76,
+    0.04,
+  ).toColor();
   @override
-  TxtColors get onBackground => primary;
+  TxtColors get onPrimary => gray0;
   @override
-  TxtColors get onSurface => primary;
+  TxtColors get onSecondary => gray2;
   @override
-  FuncColors get error => primary;
+  TxtColors get onBackground => HSVColor.fromAHSV(
+    alpha *
+        (alpha * 1.25 > 1
+            ? (1 / alpha)
+            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+    _basehue,
+    saturation - 0.12,
+    value + 0.2,
+  ).toColor();
   @override
-  FuncColors get success => primary;
+  TxtColors get onSurface => HSVColor.fromAHSV(
+    1,
+    _basehue,
+    saturation - 0.16,
+    value + 0.34,
+  ).toColor();
   @override
-  FuncColors get warning => primary;
+  FuncColors get error => Colors.red.shade400;
+  @override
+  FuncColors get success => Colors.green.shade400;
+  @override
+  FuncColors get warning => Colors.yellowAccent.shade400;
 }
