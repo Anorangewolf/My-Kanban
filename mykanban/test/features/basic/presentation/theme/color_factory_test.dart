@@ -1,6 +1,7 @@
 // 在终端输入
 // flutter run test/features/basic/presentation/theme/color_factory_test.dart
 // 以运行快速启动测试
+// 运行后输入"r"以进行热更新
 import 'package:flutter/material.dart';
 import 'package:mykanban/features/basic/presentation/theme/color_factory.dart';
 
@@ -11,7 +12,8 @@ class ColorPaletteViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('配色板预览')),
-      backgroundColor: Colors.black,
+      // 在这里设置背景颜色
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
