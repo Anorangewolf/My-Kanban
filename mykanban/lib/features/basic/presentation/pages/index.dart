@@ -1,17 +1,5 @@
-import 'package:flutter/material.dart';
-
-/// 首页
-class Index extends StatelessWidget {
-  /// 首页
-  const Index({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '首页',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-    );
-  }
-}
+// 当写入新页面时，请添加其至本入口文件，方便使用
+export 'home.dart';
+export 'login.dart';
+export 'logo.dart';
+export 'settings.dart';

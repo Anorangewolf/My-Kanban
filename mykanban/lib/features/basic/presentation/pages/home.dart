@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-/// 设置界面
-class Settings extends StatelessWidget {
-  /// 设置界面构造函数
-  const Settings({super.key});
+/// 首页
+class Home extends StatelessWidget {
+  /// 首页构造函数
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
