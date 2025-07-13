@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// µÇÂ½½çÃæ
+/// ç™»é™†ç•Œé¢
 class Login extends StatelessWidget {
-  /// µÇÂ½½çÃæ¹¹Ôìº¯Êı
+  /// ç™»é™†ç•Œé¢æ„é€ å‡½æ•°
   const Login({super.key});
 
   @override

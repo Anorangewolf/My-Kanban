@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// Logoҳ��
+/// Logo页面
 class Logo extends StatelessWidget {
-  /// Logoҳ�湹�캯��
+  /// Logo页面构造函数
   const Logo({super.key});
 
   @override

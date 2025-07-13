@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// ÉèÖÃ½çÃæ
+/// è®¾ç½®ç•Œé¢
 class Settings extends StatelessWidget {
-  /// ÉèÖÃ½çÃæ¹¹Ôìº¯Êı
+  /// è®¾ç½®ç•Œé¢æ„é€ å‡½æ•°
   const Settings({super.key});
 
   @override

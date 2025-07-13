@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// Ê×Ò³
+/// é¦–é¡µ
 class Home extends StatelessWidget {
-  /// Ê×Ò³¹¹Ôìº¯Êý
+  /// é¦–é¡µæž„é€ å‡½æ•°
   const Home({super.key});
 
   @override

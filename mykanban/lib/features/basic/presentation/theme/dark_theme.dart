@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
 import 'package:mykanban/features/basic/presentation/theme/color_factory.dart';
 
-// #region ÒýÓÃÄ¬ÈÏÉèÖÃ
-/// Ä¬ÈÏÍ¸Ã÷¶È
+// #region å¼•ç”¨é»˜è®¤è®¾ç½®
+/// é»˜è®¤é€æ˜Žåº¦
 const double alpha = ThemeColor.alpha;
 
-/// Ä¬ÈÏÉ«Ïà
+/// é»˜è®¤è‰²ç›¸
 const double hue = ThemeColor.hue;
 
-/// Ä¬ÈÏ±¥ºÍ¶È
+/// é»˜è®¤é¥±å’Œåº¦
 const double saturation = ThemeColor.saturation;
 
-/// Ä¬ÈÏÃ÷¶È
+/// é»˜è®¤æ˜Žåº¦
 const double value = ThemeColor.value;
 
-/// Ä¬ÈÏÖ÷ÌâÉ«
+/// é»˜è®¤ä¸»é¢˜è‰²
 double _basehue = ThemeColor.themeColor.hue;
 // #endregion
 
-/// ºÚ°µÖ÷ÌâÀà£¬»ùÓÚÒ»Ì×ÑÕÉ«¼ÆËã¹«Ê½£¬
-/// Í¨¹ýÓÃ»§ÊäÈëµÄ»ù×¼É«primary£¨¼´primary)£¬
-/// ¼ÆËãÉú³ÉÒ»ÕûÌ×Ö÷ÌâÑÕÉ«¡£
+/// é»‘æš—ä¸»é¢˜ç±»ï¼ŒåŸºäºŽä¸€å¥—é¢œè‰²è®¡ç®—å…¬å¼ï¼Œ
+/// é€šè¿‡ç”¨æˆ·è¾“å…¥çš„åŸºå‡†è‰²primaryï¼ˆå³primary)ï¼Œ
+/// è®¡ç®—ç”Ÿæˆä¸€æ•´å¥—ä¸»é¢˜é¢œè‰²ã€‚
 class DarkThemeColors extends ThemeColors {
   @override
   BasicColors get primary => HSVColor.fromAHSV(

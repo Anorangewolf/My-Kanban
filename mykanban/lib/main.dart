@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mykanban/app.dart';
 
 void main() {
-  // È«¾Ö³õÊ¼»¯
+  // å…¨å±€åˆå§‹åŒ–
   // WidgetsFlutterBinding.ensureInitialized();
 
-  // ÉèÖÃ´íÎó´¦Àí
+  // è®¾ç½®é”™è¯¯å¤„ç†
   // FlutterError.onError = (details) {
-  //   debugPrint('È«¾Ö´íÎó: ${details.exception}');
+  //   debugPrint('å…¨å±€é”™è¯¯: ${details.exception}');
   // };
 
   runApp(const Mykanban());
