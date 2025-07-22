@@ -47,34 +47,34 @@ class ColorFactory {
 
 /// **主题类**
 /// 主题颜色集必须包含以下属性：
-/// - 主色：primary
-/// - 主色变体：primaryVariant
-/// - 次要色：secondary
-/// - 次要色变体：secondaryVariant
-/// - 背景色：background
-/// - 表面背景色：surface
-/// - 蒙版：mask
-/// - 主文字：onPrimary
-/// - 次要文字：onSecondary
-/// - 背景文字：onBackground
-/// - 二级背景文字：onSurface
-/// - 错误：error
-/// - 成功：success
-/// - 警告：warning
-/// 以上属性的类型均为BasicColors，TxtColors，FuncColors，GrayScale。
+/// - 主色：BasicColors primary
+/// - 主色变体：BasicColors primaryVariant
+/// - 次要色：BasicColors secondary
+/// - 次要色变体：BasicColors secondaryVariant
+/// - 背景色：BasicColors background
+/// - 表面背景色：BasicColors surface
+/// - 蒙版：BasicColors mask
+/// - 主文字：TxtColors onPrimary
+/// - 次要文字：TxtColors onSecondary
+/// - 背景文字：TxtColors onBackground
+/// - 二级背景文字：TxtColors onSurface
+/// - 错误：FuncColors error
+/// - 成功：FuncColors success
+/// - 警告：FuncColors warning
 abstract class ThemeColors {
-  /// 标准化用户输入的基准色
+  /// 初始化用户输入的基准色
   ThemeColors({this.baseColor = ThemeColor.themeColor});
 
-  /// 主色，默认为AHSV(1, 62, 0.62, 0.62)
+  /// 基准色，默认为AHSV(1, 62, 0.62, 0.62)
   HSVColor baseColor;
 
-  /// 基准色相, 默认为98
+  /// 基准色相, 默认为62
   late double _basehue = baseColor.hue;
 
   /// 主色
   BasicColors get primary => baseColor.toColor();
 
+  // #region 接口
   /// 主色变体
   BasicColors get primaryVariant;
 
@@ -113,7 +113,9 @@ abstract class ThemeColors {
 
   /// 警告
   FuncColors get warning;
+  // #endregion
 
+  // #region 常量
   /// 白色
   GrayScale gray0 = const HSVColor.fromAHSV(1, 0, 0, 0.96).toColor();
 
@@ -134,6 +136,7 @@ abstract class ThemeColors {
 
   /// 黑色
   GrayScale gray6 = const HSVColor.fromAHSV(1, 0, 0, 0.04).toColor();
+  // #endregion
 
   /// 改变基准色
   void changeHue(double newhue) {
