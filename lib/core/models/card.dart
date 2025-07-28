@@ -1,22 +1,22 @@
 import 'package:isar/isar.dart';
 
-// ×Ô¶¯Éú³ÉÎÄ¼şºóÒıÓÃ
+// è‡ªåŠ¨ç”Ÿæˆæ–‡ä»¶åå¼•ç”¨
 // part 'card.g.dart';
 
-/// **¿¨Æ¬Êı¾İÄ£ĞÍÀà**
-/// Ê¹ÓÃ @Collection() ×¢½â½« Card ÀàÉùÃ÷Îª Isar ¼¯ºÏ
-/// ¿¨Æ¬Êı¾İÄ£ĞÍÒÑ°üº¬ÒÔÏÂÊôĞÔ£º
-/// - ¿¨Æ¬Ö÷¼üid£ºint cardid
-/// - ¿¨Æ¬±êÌâ£ºString title
-/// - ¿¨Æ¬ÃèÊö£ºString? description
-/// - ¿¨Æ¬×´Ì¬£ºbool status
-/// - ´´½¨Ê±¼ä£ºDateTime createdTime
-/// - ½ØÖ¹Ê±¼ä£ºDateTime? dueTime
-/// - ÓÅÏÈ¼¶£ºPriority? priority
-/// - ±êÇ©£ºList`<String>?` label
+/// **å¡ç‰‡æ•°æ®æ¨¡å‹ç±»**
+/// ä½¿ç”¨ @Collection() æ³¨è§£å°† Card ç±»å£°æ˜ä¸º Isar é›†åˆ
+/// å¡ç‰‡æ•°æ®æ¨¡å‹å·²åŒ…å«ä»¥ä¸‹å±æ€§ï¼š
+/// - å¡ç‰‡ä¸»é”®idï¼šint cardid
+/// - å¡ç‰‡æ ‡é¢˜ï¼šString title
+/// - å¡ç‰‡æè¿°ï¼šString? description
+/// - å¡ç‰‡çŠ¶æ€ï¼šbool status
+/// - åˆ›å»ºæ—¶é—´ï¼šDateTime createdTime
+/// - æˆªæ­¢æ—¶é—´ï¼šDateTime? dueTime
+/// - ä¼˜å…ˆçº§ï¼šPriority? priority
+/// - æ ‡ç­¾ï¼šList`<String>?` label
 @Collection()
 class Card {
-  /// ¹¹Ôìº¯Êı
+  /// æ„é€ å‡½æ•°
   Card({
     required this.title,
     required this.createdTime,
@@ -28,39 +28,39 @@ class Card {
     this.label,
   });
 
-  // #region ×Ö¶ÎÀàĞÍ¶¨Òå
-  /// ¿¨Æ¬Ö÷¼üid
+  // #region å­—æ®µç±»å‹å®šä¹‰
+  /// å¡ç‰‡ä¸»é”®id
   int? cardid;
 
-  /// ¿¨Æ¬±êÌâ
+  /// å¡ç‰‡æ ‡é¢˜
   @Index()
   String title;
 
-  /// ¿¨Æ¬ÃèÊö
+  /// å¡ç‰‡æè¿°
   String? description;
 
-  /// ¿¨Æ¬×´Ì¬
+  /// å¡ç‰‡çŠ¶æ€
   @Index()
   bool status;
 
-  /// ´´½¨Ê±¼ä
+  /// åˆ›å»ºæ—¶é—´
   @Index()
   DateTime createdTime;
 
-  /// ½ØÖ¹Ê±¼ä
+  /// æˆªæ­¢æ—¶é—´
   @Index()
   DateTime? dueTime;
 
-  /// ÓÅÏÈ¼¶
+  /// ä¼˜å…ˆçº§
   @Index()
   @Enumerated(EnumType.value)
   Priority? priority;
 
-  /// ±êÇ©
+  /// æ ‡ç­¾
   List<String>? label;
   // #endregion
 
-  /// ¸´ÖÆ·½·¨£¬ÓÃÓÚ¸üĞÂÈÎÎñ
+  /// å¤åˆ¶æ–¹æ³•ï¼Œç”¨äºæ›´æ–°ä»»åŠ¡
   Card copyWith({
     int? cardid,
     String? title,
@@ -84,22 +84,22 @@ class Card {
   }
 }
 
-/// ¿¨Æ¬ÓÅÏÈ¼¶Ã¶¾Ù
+/// å¡ç‰‡ä¼˜å…ˆçº§æšä¸¾
 enum Priority {
-  // #region ÓÅÏÈ¼¶Ã¶¾ÙÖµ
-  /// µÍÓÅÏÈ¼¶
+  // #region ä¼˜å…ˆçº§æšä¸¾å€¼
+  /// ä½ä¼˜å…ˆçº§
   low(0),
 
-  /// ÖĞÓÅÏÈ¼¶
+  /// ä¸­ä¼˜å…ˆçº§
   medium(1),
 
-  /// ¸ßÓÅÏÈ¼¶
+  /// é«˜ä¼˜å…ˆçº§
   high(2);
   // #endregion
 
-  /// ¹¹Ôìº¯Êı
+  /// æ„é€ å‡½æ•°
   const Priority(this.value);
 
-  /// ¶¨ÒåÓÅÏÈ¼¶Öµ
+  /// å®šä¹‰ä¼˜å…ˆçº§å€¼
   final int value;
 }

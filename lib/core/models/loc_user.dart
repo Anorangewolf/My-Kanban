@@ -1,36 +1,36 @@
 import 'package:isar/isar.dart';
 
-// ×Ô¶¯Éú³ÉÎÄ¼şºóÒıÓÃ
+// è‡ªåŠ¨ç”Ÿæˆæ–‡ä»¶åå¼•ç”¨
 // part 'loc_user.g.dart';
 
-/// **ÓÃ»§Êı¾İÄ£ĞÍÀà**
-/// Ê¹ÓÃ @Collection() ×¢½â½« LocUser ÀàÉùÃ÷Îª Isar ¼¯ºÏ
-/// ÓÃ»§Êı¾İÄ£ĞÍÒÑ°üº¬ÒÔÏÂÊôĞÔ£º
-/// - ÓÃ»§Ö÷¼üid£ºint userid
-/// - ÓÃ»§Ãû£ºString username
-/// - ÃÜÂë£ºString password
+/// **ç”¨æˆ·æ•°æ®æ¨¡å‹ç±»**
+/// ä½¿ç”¨ @Collection() æ³¨è§£å°† LocUser ç±»å£°æ˜ä¸º Isar é›†åˆ
+/// ç”¨æˆ·æ•°æ®æ¨¡å‹å·²åŒ…å«ä»¥ä¸‹å±æ€§ï¼š
+/// - ç”¨æˆ·ä¸»é”®idï¼šint userid
+/// - ç”¨æˆ·åï¼šString username
+/// - å¯†ç ï¼šString password
 @Collection()
 class LocUser {
-  /// ¹¹Ôìº¯Êı
+  /// æ„é€ å‡½æ•°
   LocUser({
     required this.username,
     required this.password,
     this.userid = Isar.autoIncrement,
   });
 
-  // #region ×Ö¶ÎÀàĞÍ¶¨Òå
-  /// ÓÃ»§Ö÷¼üid
+  // #region å­—æ®µç±»å‹å®šä¹‰
+  /// ç”¨æˆ·ä¸»é”®id
   int userid;
 
-  /// ÓÃ»§Ãû
+  /// ç”¨æˆ·å
   @Index()
   String username;
 
-  /// ÃÜÂë
+  /// å¯†ç 
   String password;
   // #endregion
 
-  /// ¸´ÖÆ·½·¨£¬ÓÃÓÚ¸üĞÂÈÎÎñ
+  /// å¤åˆ¶æ–¹æ³•ï¼Œç”¨äºæ›´æ–°ä»»åŠ¡
   LocUser copyWith({
     int? userid,
     String? username,
