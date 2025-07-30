@@ -36,7 +36,7 @@ HSVColor resetHue(double newhue) {
   );
 }
 
-/// 主题颜色工厂
+/// 颜色主题工厂
 class ColorFactory {
   /// 明亮主题
   static ThemeColors get light => LightThemeColors();
@@ -45,7 +45,7 @@ class ColorFactory {
   static ThemeColors get dark => DarkThemeColors();
 }
 
-/// **主题类**
+/// **颜色主题类**
 /// 主题颜色集必须包含以下属性：
 /// - 主色：BasicColors primary
 /// - 主色变体：BasicColors primaryVariant
