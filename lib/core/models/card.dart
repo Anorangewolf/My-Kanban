@@ -30,7 +30,7 @@ class Card {
 
   // #region 字段类型定义
   /// 卡片主键id
-  int? cardid;
+  int cardid;
 
   /// 卡片标题
   @Index()
