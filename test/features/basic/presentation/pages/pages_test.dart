@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mykanban/features/basic/presentation/pages/index.dart';
+import 'package:mykanban/features/basic/presentation/pages/utils/index.dart';
 
 /// 快速启动测试应用
 class PagesTest extends StatelessWidget {

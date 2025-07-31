@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
-import 'package:mykanban/features/basic/presentation/theme/dark_theme.dart';
-import 'package:mykanban/features/basic/presentation/theme/light_theme.dart';
 
 /// 相关常量和函数定义
 class ThemeColor {
@@ -34,15 +32,6 @@ HSVColor resetHue(double newhue) {
     ThemeColor.saturation,
     ThemeColor.value,
   );
-}
-
-/// 颜色主题工厂
-class ColorFactory {
-  /// 明亮主题
-  static ThemeColors get light => LightThemeColors();
-
-  /// 黑暗主题
-  static ThemeColors get dark => DarkThemeColors();
 }
 
 /// **颜色主题类**

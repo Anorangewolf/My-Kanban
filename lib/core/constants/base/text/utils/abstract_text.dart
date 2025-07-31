@@ -1,15 +1,4 @@
-import 'package:mykanban/core/constants/base/text/en_us.dart';
-import 'package:mykanban/core/constants/base/text/zh_cn.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
-
-/// 本地化文本格式工厂
-class TextFactory {
-  /// 简体中文
-  static TextStyles get zhcn => ZhCnTextStyles();
-
-  /// 英语（美国）
-  static TextStyles get enus => EnUsTextStyles();
-}
 
 /// **字体类**
 /// 字体类包含了应用中使用的字体信息，
