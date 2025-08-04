@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mykanban/features/basic/presentation/pages/utils/index.dart';
+import 'package:mykanban/features/presentation/pages/utils/index.dart';
+import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
 /// 快速启动测试应用
 class PagesTest extends StatelessWidget {
@@ -8,11 +9,12 @@ class PagesTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor: ColorFactory.light.background),
       debugShowCheckedModeBanner: false,
       title: 'PagesTest',
       // 此处home后面放置要测试的页面
-      home: Login(),
+      home: const Login(),
     );
   }
 }

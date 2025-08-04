@@ -3,7 +3,7 @@
 // 以运行快速启动测试
 // 运行后输入"r"以进行热更新
 import 'package:flutter/material.dart';
-import 'package:mykanban/features/basic/presentation/theme/utils/index.dart';
+import 'package:mykanban/features/presentation/theme/utils/index.dart';
 
 class ColorPaletteViewer extends StatelessWidget {
   const ColorPaletteViewer({super.key});

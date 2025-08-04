@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
-import 'package:mykanban/features/basic/presentation/theme/utils/abstract_color.dart';
+import 'package:mykanban/features/presentation/theme/utils/abstract_color.dart';
 
 // #region 引用默认设置
 /// 默认透明度

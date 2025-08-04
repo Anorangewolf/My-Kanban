@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mykanban/features/basic/presentation/pages/utils/index.dart';
+import 'package:mykanban/features/presentation/pages/utils/index.dart';
+import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
 /// 主应用
 class Mykanban extends StatelessWidget {
@@ -10,6 +11,7 @@ class Mykanban extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mykanban',
+      theme: ThemeData(scaffoldBackgroundColor: ColorFactory.light.background),
       // 路由配置
       routes: {
         '/home': (context) => const Home(),
