@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('登陆'),
+              Text('登陆', style: TextFactory.fac.loginPageButton),
               const SizedBox(height: 20),
               const TextField(
                 decoration: InputDecoration(

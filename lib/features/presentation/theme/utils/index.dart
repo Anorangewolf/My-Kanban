@@ -9,4 +9,7 @@ class ColorFactory {
 
   /// 黑暗主题
   static ThemeColors get dark => DarkThemeColors();
+
+  /// 主题工厂
+  static ThemeColors get fac => LightThemeColors();
 }

@@ -3,8 +3,8 @@ import 'package:mykanban/core/constants/base/text/utils/abstract_text.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
 import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
-/// Fonts for American English
-class EnUsFonts extends Fonts {
+/// 简体中文字体
+class ZhCnFonts extends Fonts {
   @override
   Font get headline1 => Font(
     family: 'Roboto',
@@ -28,8 +28,8 @@ class EnUsFonts extends Fonts {
   Font get decorative2 => Font(family: 'Roboto');
 }
 
-/// Text styles for American English language
-class EnUsTextStyles extends TextStyles {
+/// 简体中文文本格式
+class ZhCnTextStyles extends TextStyles {
   @override
   TextStyle get loginPageButton => TextStyle(
     color: ColorFactory.fac.onPrimary,

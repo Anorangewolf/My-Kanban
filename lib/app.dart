@@ -11,7 +11,7 @@ class Mykanban extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mykanban',
-      theme: ThemeData(scaffoldBackgroundColor: ColorFactory.light.background),
+      theme: ThemeData(scaffoldBackgroundColor: ColorFactory.fac.background),
       // 路由配置
       routes: {
         '/home': (context) => const Home(),

@@ -92,9 +92,7 @@ void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: ColorPaletteViewer(),
-      ),
+      home: ColorPaletteViewer(),
     ),
   );
 }

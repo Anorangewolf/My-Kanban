@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
 
 /// **字体类**
@@ -170,5 +171,8 @@ abstract class LineHeights {
 
 /// **文本格式类**
 /// 直接用的，根据实际情况添加，类型务必具体到使用场景
-/// 例如：LoginPageWelcomeTextStyle
-abstract class TextStyles {}
+/// 例如：loginPageWelcome
+abstract class TextStyles {
+  /// 登陆界面按钮
+  TextStyle get loginPageButton;
+}
