@@ -63,9 +63,9 @@ class FontsViewer extends StatelessWidget {
             sampleText,
             style: TextStyle(
               fontSize: 30,
-              fontFamily: font.f,
-              fontWeight: font.w,
-              fontStyle: font.s,
+              fontFamily: font.family,
+              fontWeight: font.weight,
+              fontStyle: font.style,
               letterSpacing: 2,
               height: 1.5,
             ),

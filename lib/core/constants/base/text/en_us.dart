@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/base/text/utils/abstract_text.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
-import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
 /// Fonts for American English
 class EnUsFonts extends Fonts {
@@ -31,7 +30,11 @@ class EnUsFonts extends Fonts {
 /// Text styles for American English language
 class EnUsTextStyles extends TextStyles {
   @override
-  TextStyle get loginPageButton => TextStyle(
-    color: ColorFactory.fac.onPrimary,
-  );
+  TextStyle get loginPageButton => temp();
+}
+
+// REWRITE(Anorangewolf): 临时占位避免报错，必须修改.
+/// 临时占位
+TextStyle temp() {
+  return const TextStyle();
 }

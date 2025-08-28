@@ -1,39 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
 
-/// 相关常量和函数定义
-class ThemeColor {
-  /// 默认透明度
-  static const double alpha = 1;
-
-  /// 默认色相
-  static const double hue = 62;
-
-  /// 默认饱和度
-  static const double saturation = 0.58;
-
-  /// 默认明度
-  static const double value = 0.62;
-
-  /// 默认主题色
-  static const HSVColor themeColor = HSVColor.fromAHSV(
-    alpha,
-    hue,
-    saturation,
-    value,
-  );
-}
-
-/// 仅设置色相，其余重置为默认值
-HSVColor resetHue(double newhue) {
-  return HSVColor.fromAHSV(
-    ThemeColor.alpha,
-    newhue,
-    ThemeColor.saturation,
-    ThemeColor.value,
-  );
-}
-
 /// **颜色主题类**
 /// 主题颜色集必须包含以下属性：
 /// - 主色：BasicColors primary
@@ -50,86 +17,98 @@ HSVColor resetHue(double newhue) {
 /// - 错误：FuncColors error
 /// - 成功：FuncColors success
 /// - 警告：FuncColors warning
-abstract class ThemeColors {
+abstract class ColorTheme {
   /// 初始化用户输入的基准色
-  ThemeColors({this.baseColor = ThemeColor.themeColor});
+  ColorTheme(this.baseColor);
 
   /// 基准色，默认为AHSV(1, 62, 0.62, 0.62)
-  HSVColor baseColor;
+  ThemeColor baseColor;
 
   /// 基准色相, 默认为62
-  late double _basehue = baseColor.hue;
+  late Hue _basehue = baseColor.hue;
 
   /// 主色
-  BasicColors get primary => baseColor.toColor();
+  BasicColor get primary => BasicColor(baseColor.colorValue);
 
   // #region 接口
   /// 主色变体
-  BasicColors get primaryVariant;
+  BasicColor get primaryVariant;
 
   /// 次要色
-  BasicColors get secondary;
+  BasicColor get secondary;
 
   /// 次要色变体
-  BasicColors get secondaryVariant;
+  BasicColor get secondaryVariant;
 
   /// 背景色
-  BasicColors get background;
+  BasicColor get background;
 
   /// 表面背景色
-  BasicColors get surface;
+  BasicColor get surface;
 
   /// 蒙版
-  BasicColors get mask;
+  BasicColor get mask;
 
   /// 主文字
-  TxtColors get onPrimary;
+  TxtColor get onPrimary;
 
   /// 次要文字
-  TxtColors get onSecondary;
+  TxtColor get onSecondary;
 
   /// 背景文字
-  TxtColors get onBackground;
+  TxtColor get onBackground;
 
   /// 二级背景文字
-  TxtColors get onSurface;
+  TxtColor get onSurface;
 
   /// 错误
-  FuncColors get error;
+  FuncColor get error;
 
   /// 成功
-  FuncColors get success;
+  FuncColor get success;
 
   /// 警告
-  FuncColors get warning;
+  FuncColor get warning;
   // #endregion
 
   // #region 常量
   /// 白色
-  GrayScale gray0 = const HSVColor.fromAHSV(1, 0, 0, 0.96).toColor();
+  GrayScale gray0 = GrayScale.fromAHSV(Value.v96);
 
   /// 灰度12%
-  GrayScale gray1 = const HSVColor.fromAHSV(1, 0, 0, 0.88).toColor();
+  GrayScale gray1 = GrayScale.fromAHSV(Value.v88);
 
   /// 灰度25%
-  GrayScale gray2 = const HSVColor.fromAHSV(1, 0, 0, 0.75).toColor();
+  GrayScale gray2 = GrayScale.fromAHSV(Value.v75);
 
   /// 灰度38%
-  GrayScale gray3 = const HSVColor.fromAHSV(1, 0, 0, 0.62).toColor();
+  GrayScale gray3 = GrayScale.fromAHSV(Value.dfValue);
 
   /// 灰度54%
-  GrayScale gray4 = const HSVColor.fromAHSV(1, 0, 0, 0.46).toColor();
+  GrayScale gray4 = GrayScale.fromAHSV(Value.v46);
 
   /// 灰度76%
-  GrayScale gray5 = const HSVColor.fromAHSV(1, 0, 0, 0.24).toColor();
+  GrayScale gray5 = GrayScale.fromAHSV(Value.v24);
 
   /// 黑色
-  GrayScale gray6 = const HSVColor.fromAHSV(1, 0, 0, 0.04).toColor();
+  GrayScale gray6 = GrayScale.fromAHSV(Value.v04);
   // #endregion
 
   /// 改变基准色
-  void changeHue(double newhue) {
+  void changeHue(Hue newhue) {
     _basehue = newhue;
-    baseColor = resetHue(_basehue);
+    baseColor = _resetHue(_basehue);
+  }
+
+  /// 仅设置色相，其余重置为默认值
+  ThemeColor _resetHue(Hue newhue) {
+    return ThemeColor(
+      HSVColor.fromAHSV(
+        Alpha.dfAlpha.value,
+        newhue.value,
+        Saturation.dfSaturation.value,
+        Value.dfValue.value,
+      ),
+    );
   }
 }

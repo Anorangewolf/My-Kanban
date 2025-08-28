@@ -169,6 +169,23 @@ abstract class LineHeights {
   LineHeight get large => 2;
 }
 
+/// 文本样式
+TextStyle customTextStyle(
+  Font font,
+  FontSize fontSize,
+  Spacing letterSpacing,
+  LineHeight height,
+) {
+  return TextStyle(
+    fontFamily: font.family,
+    fontWeight: font.weight,
+    fontStyle: font.style,
+    fontSize: fontSize,
+    letterSpacing: letterSpacing,
+    height: height,
+  );
+}
+
 /// **文本格式类**
 /// 直接用的，根据实际情况添加，类型务必具体到使用场景
 /// 例如：loginPageWelcome

@@ -4,111 +4,109 @@ import 'package:mykanban/features/presentation/theme/utils/abstract_color.dart';
 
 // #region 引用默认设置
 /// 默认透明度
-const double alpha = ThemeColor.alpha;
+const Alpha alpha = Alpha.dfAlpha;
 
 /// 默认色相
-const double hue = ThemeColor.hue;
+const Hue hue = Hue.dfHue;
 
 /// 默认饱和度
-const double saturation = ThemeColor.saturation;
+const Saturation saturation = Saturation.dfSaturation;
 
 /// 默认明度
-const double value = ThemeColor.value;
+const Value value = Value.dfValue;
 
 /// 默认主题色
-double _basehue = ThemeColor.themeColor.hue;
+Hue _basehue = ThemeColor.dfThemeColor.hue;
 // #endregion
 
-/// 黑暗主题类，基于一套颜色计算公式，
+/// 黑暗主题，基于一套颜色计算公式，
 /// 通过用户输入的基准色primary（即primary)，
 /// 计算生成一整套主题颜色。
-class DarkThemeColors extends ThemeColors {
+class DarkColorTheme extends ColorTheme {
+  /// 黑暗主题
+  DarkColorTheme(super.baseColor);
+
   @override
-  BasicColors get primary => HSVColor.fromAHSV(
-    alpha *
-        (alpha * 1.25 > 1
-            ? (1 / alpha)
-            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+  BasicColor get primary => BasicColor.fromAHSV(
+    alpha * 1.25 > 1
+        ? Alpha.dfAlpha
+        : (alpha * 1.25 < 0.8 ? const Alpha(0.8) : alpha * 1.25),
     _basehue,
     saturation + 0.08,
     value + 0.22,
-  ).toColor();
+  );
   @override
-  BasicColors get primaryVariant => HSVColor.fromAHSV(
-    alpha *
-        (alpha * 1.25 > 1
-            ? (1 / alpha)
-            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+  BasicColor get primaryVariant => BasicColor.fromAHSV(
+    alpha * 1.25 > 1
+        ? Alpha.dfAlpha
+        : (alpha * 1.25 < 0.8 ? const Alpha(0.8) : alpha * 1.25),
     _basehue + (_basehue < 330 ? 30 : -330),
     saturation + 0.08,
     value + 0.22,
-  ).toColor();
+  );
   @override
-  BasicColors get secondary => HSVColor.fromAHSV(
-    alpha *
-        (alpha * 1.25 > 1
-            ? (1 / alpha)
-            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+  BasicColor get secondary => BasicColor.fromAHSV(
+    alpha * 1.25 > 1
+        ? Alpha.dfAlpha
+        : (alpha * 1.25 < 0.8 ? const Alpha(0.8) : alpha * 1.25),
     _basehue + (_basehue < 240 ? 120 : -240),
-    0.30,
-    0.72,
-  ).toColor();
+    Saturation.s30,
+    const Value(0.72),
+  );
   @override
-  BasicColors get secondaryVariant => HSVColor.fromAHSV(
-    alpha *
-        (alpha * 1.25 > 1
-            ? (1 / alpha)
-            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+  BasicColor get secondaryVariant => BasicColor.fromAHSV(
+    alpha * 1.25 > 1
+        ? Alpha.dfAlpha
+        : (alpha * 1.25 < 0.8 ? const Alpha(0.8) : alpha * 1.25),
     _basehue + (_basehue > 120 ? -120 : 240),
-    0.30,
-    0.72,
-  ).toColor();
+    Saturation.s30,
+    const Value(0.72),
+  );
   @override
-  BasicColors get background => HSVColor.fromAHSV(
+  BasicColor get background => BasicColor.fromAHSV(
     alpha,
     _basehue,
-    0.04,
-    0.14,
-  ).toColor();
+    Saturation.s04,
+    const Value(0.14),
+  );
   @override
-  BasicColors get surface => HSVColor.fromAHSV(
-    1,
+  BasicColor get surface => BasicColor.fromAHSV(
+    Alpha.dfAlpha,
     _basehue + (_basehue < 180 ? 180 : -180),
-    0.04,
-    0.36,
-  ).toColor();
+    Saturation.s04,
+    const Value(0.36),
+  );
   @override
-  BasicColors get mask => HSVColor.fromAHSV(
+  BasicColor get mask => BasicColor.fromAHSV(
     alpha * 0.54,
     _basehue + (_basehue > 180 ? -180 : 180),
-    0.76,
-    0.04,
-  ).toColor();
+    Saturation.s76,
+    Value.v04,
+  );
   @override
-  TxtColors get onPrimary => gray0;
+  TxtColor get onPrimary => TxtColor(gray0.colorValue);
   @override
-  TxtColors get onSecondary => gray2;
+  TxtColor get onSecondary => TxtColor(gray2.colorValue);
   @override
-  TxtColors get onBackground => HSVColor.fromAHSV(
-    alpha *
-        (alpha * 1.25 > 1
-            ? (1 / alpha)
-            : (alpha * 1.25 < 0.8 ? (0.8 / alpha) : 1.25)),
+  TxtColor get onBackground => TxtColor.fromAHSV(
+    alpha * 1.25 > 1
+        ? Alpha.dfAlpha
+        : (alpha * 1.25 < 0.8 ? const Alpha(0.8) : alpha * 1.25),
     _basehue,
     saturation - 0.12,
     value + 0.2,
-  ).toColor();
+  );
   @override
-  TxtColors get onSurface => HSVColor.fromAHSV(
-    1,
+  TxtColor get onSurface => TxtColor.fromAHSV(
+    Alpha.dfAlpha,
     _basehue,
     saturation - 0.16,
     value + 0.34,
-  ).toColor();
+  );
   @override
-  FuncColors get error => Colors.red.shade400;
+  FuncColor get error => FuncColor.fromColor(Colors.red.shade400);
   @override
-  FuncColors get success => Colors.green.shade400;
+  FuncColor get success => FuncColor.fromColor(Colors.green.shade400);
   @override
-  FuncColors get warning => Colors.yellowAccent.shade400;
+  FuncColor get warning => FuncColor.fromColor(Colors.yellowAccent.shade400);
 }

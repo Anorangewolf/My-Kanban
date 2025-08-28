@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mykanban/core/constants/dev/type_defs.dart';
 import 'package:mykanban/features/presentation/pages/utils/index.dart';
 import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
@@ -11,7 +12,11 @@ class Mykanban extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mykanban',
-      theme: ThemeData(scaffoldBackgroundColor: ColorFactory.fac.background),
+      theme: ThemeData(
+        scaffoldBackgroundColor: ColorFactory.fac(
+          ThemeColor.dfThemeColor,
+        ).background.color,
+      ),
       // 路由配置
       routes: {
         '/home': (context) => const Home(),
