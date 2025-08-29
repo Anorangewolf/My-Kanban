@@ -329,7 +329,7 @@ class Font {
 }
 
 /// 文本字号
-class FontSize extends DoubleProp<FontSize>{
+class FontSize extends DoubleProp<FontSize> {
   /// 文本字号
   const FontSize(super.value);
 
@@ -338,7 +338,7 @@ class FontSize extends DoubleProp<FontSize>{
 }
 
 /// 文本字间距
-class Spacing extends DoubleProp<Spacing>{
+class Spacing extends DoubleProp<Spacing> {
   /// 文本字间距
   const Spacing(super.value);
 
@@ -347,11 +347,12 @@ class Spacing extends DoubleProp<Spacing>{
 }
 
 /// 文本行高
-class LineHeight extends DoubleProp<LineHeight>{
+class LineHeight extends DoubleProp<LineHeight> {
   /// 文本行高
   const LineHeight(super.value);
 
   @override
   LineHeight create(double value) => LineHeight(value);
 }
+
 // #endregion

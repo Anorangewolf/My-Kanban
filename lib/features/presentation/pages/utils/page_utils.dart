@@ -6,7 +6,7 @@ export 'package:mykanban/core/constants/base/text/utils/index.dart';
 export 'package:mykanban/features/presentation/theme/utils/index.dart';
 export 'package:mykanban/features/presentation/widgets/utils/index.dart';
 
-// TODO(Anorangewolf): Change the location of the themeSettings.
+// TODO(Anorangewolf): Please change the location of the themeSettings.
 // #region 主题设置
 /// 应用的主题 appTheme
 ColorTheme theme = ColorFactory.fac(

@@ -6,25 +6,82 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 class ZhCnFonts extends Fonts {
   @override
   Font get headline1 => Font(
-    weight: FontWeight.w800,
+    family: 'NotoSans',
+    weight: FontWeight.w900,
   );
   @override
-  Font get headline2 => Font(family: 'Roboto');
+  Font get headline2 => Font(
+    family: 'NotoSans',
+    weight: FontWeight.bold,
+  );
   @override
-  Font get headlineSP => Font(family: 'Roboto');
+  Font get headlineSP => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w600,
+  );
   @override
-  Font get title => Font(family: 'Roboto');
+  Font get title => Font(
+    family: 'NotoSans',
+  );
   @override
-  Font get titleSP => Font(family: 'Roboto');
+  Font get titleSP => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w500,
+  );
   @override
-  Font get bodyPrimary => Font(family: 'Roboto');
+  Font get bodyPrimary => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w200,
+  );
   @override
-  Font get bodySecondary => Font(family: 'Roboto');
+  Font get bodySecondary => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w100,
+  );
   @override
-  Font get decorative1 => Font(family: 'Roboto');
+  Font get bodyBold => Font(
+    weight: FontWeight.w300,
+  );
   @override
-  Font get decorative2 => Font(family: 'Roboto');
+  Font get bodyItalic => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w200,
+    style: FontStyle.italic,
+  );
+  @override
+  Font get decorative1 => Font(
+    family: 'NotoSerif',
+    weight: FontWeight.w600,
+  );
+  @override
+  Font get decorative2 => Font(
+    family: 'NotoSerif',
+    weight: FontWeight.w900,
+  );
 }
+
+/// 简体中文字体大小
+class ZhCnFontSizes extends FontSizes {}
+
+/// 简体中文字间距
+class ZhCnSpacings extends Spacings {}
+
+/// 简体中文行高
+class ZhCnLineHeights extends LineHeights {}
+
+// #region 实例化
+/// 简体中文字体集
+ZhCnFonts f = ZhCnFonts();
+
+/// 简体中文字体大小集
+ZhCnFontSizes s = ZhCnFontSizes();
+
+/// 简体中文字间距集
+ZhCnSpacings sp = ZhCnSpacings();
+
+/// 简体中文行高集
+ZhCnLineHeights h = ZhCnLineHeights();
+// #endregion
 
 /// 简体中文文本格式
 class ZhCnTextStyles extends TextStyles {
@@ -32,7 +89,7 @@ class ZhCnTextStyles extends TextStyles {
   TextStyle get loginPageButton => temp();
 }
 
-// REWRITE(Anorangewolf): 临时占位避免报错，必须修改.
+// HACK(Anorangewolf): 临时占位避免报错，必须修改.
 /// 临时占位
 TextStyle temp() {
   return const TextStyle();

@@ -22,6 +22,10 @@ class EnUsFonts extends Fonts {
   @override
   Font get bodySecondary => Font(family: 'Roboto');
   @override
+  Font get bodyBold => Font(family: 'Roboto', weight: FontWeight.bold);
+  @override
+  Font get bodyItalic => Font(family: 'Roboto', style: FontStyle.italic);
+  @override
   Font get decorative1 => Font(family: 'Roboto');
   @override
   Font get decorative2 => Font(family: 'Roboto');
@@ -33,7 +37,7 @@ class EnUsTextStyles extends TextStyles {
   TextStyle get loginPageButton => temp();
 }
 
-// REWRITE(Anorangewolf): 临时占位避免报错，必须修改.
+// HACK(Anorangewolf): 临时占位避免报错，必须修改.
 /// 临时占位
 TextStyle temp() {
   return const TextStyle();

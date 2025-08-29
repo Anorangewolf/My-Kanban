@@ -36,6 +36,12 @@ abstract class Fonts {
   /// 正文辅助字体
   Font get bodySecondary;
 
+  /// 正文主字体加粗
+  Font get bodyBold;
+
+  /// 正文主字体斜体
+  Font get bodyItalic;
+
   /// 装饰性文字字体1
   Font get decorative1;
 
@@ -159,10 +165,10 @@ abstract class LineHeights {
   /// 1.5倍行距
   LineHeight get medium => const LineHeight(1.5);
 
-  /// 1.6倍行距 
+  /// 1.6倍行距
   LineHeight get spMedium => const LineHeight(1.6);
 
-  /// 1.75倍行距  
+  /// 1.75倍行距
   LineHeight get spLarge => const LineHeight(1.75);
 
   /// 2倍行距
