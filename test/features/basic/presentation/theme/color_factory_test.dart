@@ -3,7 +3,8 @@
 // 以运行快速启动测试
 // 运行后输入"r"以进行热更新
 import 'package:flutter/material.dart';
-import 'package:mykanban/features/basic/presentation/theme/color_factory.dart';
+import 'package:mykanban/core/constants/dev/type_defs.dart';
+import 'package:mykanban/features/presentation/theme/utils/index.dart';
 
 class ColorPaletteViewer extends StatelessWidget {
   const ColorPaletteViewer({super.key});
@@ -19,10 +20,10 @@ class ColorPaletteViewer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            for (final ThemeColors t in [
+            for (final t in [
               // 在这里添加要预览的主题
-              ColorFactory.light,
-              ColorFactory.dark,
+              ColorFactory.light(ThemeColor.dfThemeColor),
+              ColorFactory.dark(ThemeColor.dfThemeColor),
             ]) ...[
               _buildColorCard('主色', t.primary),
               _buildColorCard('主色变体', t.primaryVariant),
@@ -52,19 +53,19 @@ class ColorPaletteViewer extends StatelessWidget {
     );
   }
 
-  Widget _buildColorCard(String name, Color color) {
+  Widget _buildColorCard<T extends ColorType>(String name, T color) {
     return Card(
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(16),
-        color: color,
+        color: color.color,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               name,
               style: TextStyle(
-                color: _getContrastColor(color),
+                color: _getContrastColor(color.color),
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -73,7 +74,7 @@ class ColorPaletteViewer extends StatelessWidget {
             Text(
               color.toString(),
               style: TextStyle(
-                color: _getContrastColor(color),
+                color: _getContrastColor(color.color),
               ),
             ),
           ],
@@ -92,9 +93,7 @@ void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: ColorPaletteViewer(),
-      ),
+      home: ColorPaletteViewer(),
     ),
   );
 }

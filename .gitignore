@@ -13,8 +13,6 @@
 .swiftpm/
 migrate_working_dir/
 learning/
-flow_mermaid.md
-gantt_mermaid.md
 
 # IntelliJ related
 *.iml

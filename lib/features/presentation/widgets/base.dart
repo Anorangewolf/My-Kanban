@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+/// 基础出血组件
+class Base extends StatelessWidget {
+  /// 基础出血组件构造函数
+  const Base({super.key, this.child});
+
+  /// 子组件
+  final Widget? child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Align(
+        child: FractionallySizedBox(
+          widthFactor: 0.95,
+          heightFactor: 0.95,
+          child: child,
+        ),
+      ),
+    );
+  }
+}

@@ -1,3 +1,8 @@
 {
-    "cmake.ignoreCMakeListsMissing": true
+    "cmake.ignoreCMakeListsMissing": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "[dart]": {
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnSave": true,
 }
