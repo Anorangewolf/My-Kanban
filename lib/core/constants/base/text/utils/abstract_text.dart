@@ -64,52 +64,52 @@ abstract class Fonts {
 /// - 巨无霸（特殊）：spHuge
 abstract class FontSizes {
   /// 加加加小
-  FontSize get xxxSmall => 5;
+  FontSize get xxxSmall => const FontSize(5);
 
   /// 加加小
-  FontSize get xxSmall => 6.5;
+  FontSize get xxSmall => const FontSize(6.5);
 
   /// 加小
-  FontSize get xSmall => 8;
+  FontSize get xSmall => const FontSize(8);
 
   /// 小
-  FontSize get small => 10;
+  FontSize get small => const FontSize(10);
 
   /// 小（特殊）
-  FontSize get spSmall => 9;
+  FontSize get spSmall => const FontSize(9);
 
   /// 常用1
-  FontSize get normal => 11;
+  FontSize get normal => const FontSize(11);
 
   /// 常用2
-  FontSize get spNormal => 12;
+  FontSize get spNormal => const FontSize(12);
 
   /// 中
-  FontSize get medium => 16;
+  FontSize get medium => const FontSize(16);
 
   /// 中（特殊）
-  FontSize get spMedium => 18;
+  FontSize get spMedium => const FontSize(18);
 
   /// 大
-  FontSize get large => 28;
+  FontSize get large => const FontSize(28);
 
   /// 大（特殊）
-  FontSize get spLarge => 24;
+  FontSize get spLarge => const FontSize(24);
 
   /// 加大
-  FontSize get xLarge => 36;
+  FontSize get xLarge => const FontSize(36);
 
   /// 加加大
-  FontSize get xxLarge => 48;
+  FontSize get xxLarge => const FontSize(48);
 
   /// 加加加大
-  FontSize get xxxLarge => 72;
+  FontSize get xxxLarge => const FontSize(72);
 
   /// 巨无霸
-  FontSize get huge => 96;
+  FontSize get huge => const FontSize(96);
 
   /// 巨无霸（特殊）
-  FontSize get spHuge => 118;
+  FontSize get spHuge => const FontSize(118);
 }
 
 /// **字符间距类**
@@ -123,50 +123,50 @@ abstract class FontSizes {
 /// - 极宽：xLarge
 abstract class Spacings {
   /// 极窄
-  Spacing get xSmall => 0.75;
+  Spacing get xsmall => const Spacing(0.75);
 
   /// 窄
-  Spacing get small => 1.5;
+  Spacing get small => const Spacing(1.5);
 
   /// 常用
-  Spacing get normal => 2;
+  Spacing get normal => const Spacing(2);
 
   /// 中
-  Spacing get medium => 4;
+  Spacing get medium => const Spacing(4);
 
   /// 宽
-  Spacing get large => 5;
+  Spacing get large => const Spacing(5);
 
   /// 极宽
-  Spacing get xLarge => 8;
+  Spacing get xlarge => const Spacing(8);
 }
 
 /// **行高类**
 /// 行高类包含了应用中使用的行高信息，以倍数的形式表示
 abstract class LineHeights {
   /// 单倍行距
-  LineHeight get small => 1;
+  LineHeight get small => const LineHeight(1);
 
   /// 1.1倍行距
-  LineHeight get spSmall => 1.1;
+  LineHeight get spSmall => const LineHeight(1.1);
 
   /// 常用
-  LineHeight get normal => 1.2;
+  LineHeight get normal => const LineHeight(1.2);
 
   /// 1.25倍行距
-  LineHeight get spNormal => 1.25;
+  LineHeight get spNormal => const LineHeight(1.25);
 
   /// 1.5倍行距
-  LineHeight get medium => 1.5;
+  LineHeight get medium => const LineHeight(1.5);
 
-  /// 1.6倍行距
-  LineHeight get spMedium => 1.6;
+  /// 1.6倍行距 
+  LineHeight get spMedium => const LineHeight(1.6);
 
-  /// 1.75倍行距
-  LineHeight get spLarge => 1.75;
+  /// 1.75倍行距  
+  LineHeight get spLarge => const LineHeight(1.75);
 
   /// 2倍行距
-  LineHeight get large => 2;
+  LineHeight get large => const LineHeight(2);
 }
 
 /// 文本样式
@@ -180,9 +180,9 @@ TextStyle customTextStyle(
     fontFamily: font.family,
     fontWeight: font.weight,
     fontStyle: font.style,
-    fontSize: fontSize,
-    letterSpacing: letterSpacing,
-    height: height,
+    fontSize: fontSize.value,
+    letterSpacing: letterSpacing.value,
+    height: height.value,
   );
 }
 

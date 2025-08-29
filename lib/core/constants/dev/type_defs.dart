@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-// #region Color Type
-
-// #region AHSV颜色基本属性
-/// AHSV颜色基本属性（模板）
-abstract class AHSVColorProp<T extends AHSVColorProp<T>> {
+// #region Props
+/// 数值属性（强double互操作模板）
+abstract class DoubleProp<T extends DoubleProp<T>> {
   /// AHSV颜色基本属性
-  const AHSVColorProp(this.value);
+  const DoubleProp(this.value);
 
   /// 属性值
   final double value;
@@ -34,9 +32,13 @@ abstract class AHSVColorProp<T extends AHSVColorProp<T>> {
   bool operator <(double other) => value < other;
   // #endregion
 }
+// #endregion
 
+// #region Color Type
+
+// #region AHSV颜色基本属性
 /// 透明度
-class Alpha extends AHSVColorProp<Alpha> {
+class Alpha extends DoubleProp<Alpha> {
   /// 透明度
   const Alpha(super.value);
 
@@ -69,7 +71,7 @@ class Alpha extends AHSVColorProp<Alpha> {
 }
 
 /// 色相
-class Hue extends AHSVColorProp<Hue> {
+class Hue extends DoubleProp<Hue> {
   /// 色相
   const Hue(super.value);
 
@@ -108,7 +110,7 @@ class Hue extends AHSVColorProp<Hue> {
 }
 
 /// 饱和度
-class Saturation extends AHSVColorProp<Saturation> {
+class Saturation extends DoubleProp<Saturation> {
   /// 饱和度
   const Saturation(super.value);
 
@@ -138,7 +140,7 @@ class Saturation extends AHSVColorProp<Saturation> {
 }
 
 /// 亮度
-class Value extends AHSVColorProp<Value> {
+class Value extends DoubleProp<Value> {
   /// 亮度
   const Value(super.value);
 
@@ -327,11 +329,29 @@ class Font {
 }
 
 /// 文本字号
-typedef FontSize = double;
+class FontSize extends DoubleProp<FontSize>{
+  /// 文本字号
+  const FontSize(super.value);
+
+  @override
+  FontSize create(double value) => FontSize(value);
+}
 
 /// 文本字间距
-typedef Spacing = double;
+class Spacing extends DoubleProp<Spacing>{
+  /// 文本字间距
+  const Spacing(super.value);
+
+  @override
+  Spacing create(double value) => Spacing(value);
+}
 
 /// 文本行高
-typedef LineHeight = double;
+class LineHeight extends DoubleProp<LineHeight>{
+  /// 文本行高
+  const LineHeight(super.value);
+
+  @override
+  LineHeight create(double value) => LineHeight(value);
+}
 // #endregion
