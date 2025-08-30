@@ -71,31 +71,43 @@ flutter:
   fonts:
     - family: NotoSerif
       fonts:
-        - asset: assets/fonts/NotoSerif_Condensed-Black.ttf
+        - asset: assets/fonts/en_us/NotoSerif_Condensed-Black.ttf
           weight: 900
-        - asset: assets/fonts/NotoSerif_Condensed-SemiBold.ttf
-          weight: 600
+        - asset: assets/fonts/en_us/NotoSerif_Condensed-Bold.ttf
+          weight: 700
     - family: NotoSans
       fonts:
-        - asset: assets/fonts/NotoSans_Condensed-Black.ttf
-          weight: 900
-        - asset: assets/fonts/NotoSans_Condensed-Bold.ttf
+        - asset: assets/fonts/en_us/NotoSans_Condensed-Bold.ttf
           weight: 700
-        - asset: assets/fonts/NotoSans_Condensed-SemiBold.ttf
+        - asset: assets/fonts/en_us/NotoSans_Condensed-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/NotoSans-Medium.ttf
+        - asset: assets/fonts/en_us/NotoSans-Condensed-Medium.ttf
           weight: 500
-        - asset: assets/fonts/NotoSans-Regular.ttf
+        - asset: assets/fonts/en_us/NotoSans-Condensed-Regular.ttf
           weight: 400
-        - asset: assets/fonts/NotoSans-Light.ttf
+        - asset: assets/fonts/en_us/NotoSans-Condensed-Light.ttf
           weight: 300
-        - asset: assets/fonts/NotoSans-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/NotoSans-ExtraLightItalic.ttf
-          weight: 200
+        - asset: assets/fonts/en_us/NotoSans-Condensed-LightItalic.ttf
+          weight: 300
           style: italic
-        - asset: assets/fonts/NotoSans-Thin.ttf
-          weight: 100
+    - family: NotoSerifSC
+      fonts:
+        - asset: assets/fonts/zh_cn/NotoSerifSC-Black.ttf
+          weight: 900
+        - asset: assets/fonts/zh_cn/NotoSerifSC-Bold.ttf
+          weight: 700
+    - family: NotoSansSC
+      fonts:
+        - asset: assets/fonts/zh_cn/NotoSansSC-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/zh_cn/NotoSansSC-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/zh_cn/NotoSansSC-Medium-cut.ttf
+          weight: 500
+        - asset: assets/fonts/zh_cn/NotoSansSC-Regular-cut.ttf
+          weight: 400
+        - asset: assets/fonts/zh_cn/NotoSansSC-Light-cut.ttf
+          weight: 300
 
   #   - family: Trajan Pro
   #     fonts:

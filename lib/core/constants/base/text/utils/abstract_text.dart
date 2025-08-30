@@ -15,38 +15,20 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 /// - 装饰性文字字体2：decorative2
 /// 字体属于Font类，数据格式见Font类注释。
 abstract class Fonts {
-  /// 标题字体1，字号大于48时使用
+  /// 标题
   Font get headline1;
 
-  /// 标题字体2，字号介于24-48之间时使用
-  Font get headline2;
-
-  /// 特殊标题字体，应用显示范围受限，标题字号小于24时使用
-  Font get headlineSP;
-
-  /// 小标题字体
+  /// 小标题
   Font get title;
 
-  /// 特殊小标题字体，应用显示范围受限，小标题字号小于12时使用
-  Font get titleSP;
-
-  /// 正文主字体
+  /// 正文
   Font get bodyPrimary;
 
-  /// 正文辅助字体
-  Font get bodySecondary;
-
-  /// 正文主字体加粗
+  /// 正文加粗
   Font get bodyBold;
 
-  /// 正文主字体斜体
+  /// 正文斜体
   Font get bodyItalic;
-
-  /// 装饰性文字字体1
-  Font get decorative1;
-
-  /// 装饰性文字字体2
-  Font get decorative2;
 }
 
 /// **字号类**

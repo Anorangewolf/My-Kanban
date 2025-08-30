@@ -10,25 +10,13 @@ class EnUsFonts extends Fonts {
     weight: FontWeight.w500,
   );
   @override
-  Font get headline2 => Font(family: 'Roboto');
+  Font get title => Font(family: 'Roboto',);
   @override
-  Font get headlineSP => Font(family: 'Roboto');
+  Font get bodyPrimary => Font(family: 'Roboto',);
   @override
-  Font get title => Font(family: 'Roboto');
+  Font get bodyBold => Font(family: 'Roboto', weight: FontWeight.bold,);
   @override
-  Font get titleSP => Font(family: 'Roboto');
-  @override
-  Font get bodyPrimary => Font(family: 'Roboto');
-  @override
-  Font get bodySecondary => Font(family: 'Roboto');
-  @override
-  Font get bodyBold => Font(family: 'Roboto', weight: FontWeight.bold);
-  @override
-  Font get bodyItalic => Font(family: 'Roboto', style: FontStyle.italic);
-  @override
-  Font get decorative1 => Font(family: 'Roboto');
-  @override
-  Font get decorative2 => Font(family: 'Roboto');
+  Font get bodyItalic => Font(family: 'Roboto', style: FontStyle.italic,);
 }
 
 /// Text styles for American English language

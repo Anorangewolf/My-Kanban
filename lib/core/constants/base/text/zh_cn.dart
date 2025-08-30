@@ -10,33 +10,13 @@ class ZhCnFonts extends Fonts {
     weight: FontWeight.w900,
   );
   @override
-  Font get headline2 => Font(
-    family: 'NotoSans',
-    weight: FontWeight.bold,
-  );
-  @override
-  Font get headlineSP => Font(
-    family: 'NotoSans',
-    weight: FontWeight.w600,
-  );
-  @override
   Font get title => Font(
     family: 'NotoSans',
-  );
-  @override
-  Font get titleSP => Font(
-    family: 'NotoSans',
-    weight: FontWeight.w500,
   );
   @override
   Font get bodyPrimary => Font(
     family: 'NotoSans',
     weight: FontWeight.w200,
-  );
-  @override
-  Font get bodySecondary => Font(
-    family: 'NotoSans',
-    weight: FontWeight.w100,
   );
   @override
   Font get bodyBold => Font(
@@ -47,16 +27,6 @@ class ZhCnFonts extends Fonts {
     family: 'NotoSans',
     weight: FontWeight.w200,
     style: FontStyle.italic,
-  );
-  @override
-  Font get decorative1 => Font(
-    family: 'NotoSerif',
-    weight: FontWeight.w600,
-  );
-  @override
-  Font get decorative2 => Font(
-    family: 'NotoSerif',
-    weight: FontWeight.w900,
   );
 }
 
