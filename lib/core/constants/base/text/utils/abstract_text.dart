@@ -18,6 +18,9 @@ abstract class Fonts {
   /// 标题
   Font get headline1;
 
+  /// 副标题
+  Font get headline2;
+
   /// 小标题
   Font get title;
 
@@ -29,6 +32,12 @@ abstract class Fonts {
 
   /// 正文斜体
   Font get bodyItalic;
+
+  /// 装饰性文字1
+  Font get decorative1;
+
+  /// 装饰性文字2
+  Font get decorative2;
 }
 
 /// **字号类**

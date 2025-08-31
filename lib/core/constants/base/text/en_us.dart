@@ -6,18 +6,69 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 class EnUsFonts extends Fonts {
   @override
   Font get headline1 => Font(
-    family: 'Roboto',
+    family: 'NotoSans',
+    weight: FontWeight.w700,
+  );
+  @override
+  Font get headline2 => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w600,
+  );
+  @override
+  Font get title => Font(
+    family: 'NotoSans',
     weight: FontWeight.w500,
   );
   @override
-  Font get title => Font(family: 'Roboto',);
+  Font get bodyPrimary => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w300,
+  );
   @override
-  Font get bodyPrimary => Font(family: 'Roboto',);
+  Font get bodyBold => Font(
+    family: 'NotoSans',
+  );
   @override
-  Font get bodyBold => Font(family: 'Roboto', weight: FontWeight.bold,);
+  Font get bodyItalic => Font(
+    family: 'NotoSans',
+    weight: FontWeight.w300,
+    style: FontStyle.italic,
+  );
   @override
-  Font get bodyItalic => Font(family: 'Roboto', style: FontStyle.italic,);
+  Font get decorative1 => Font(
+    family: 'NotoSerif',
+    weight: FontWeight.w900,
+  );
+  @override
+  Font get decorative2 => Font(
+    family: 'Roboto',
+    weight: FontWeight.w700,
+  );
 }
+
+/// FontSizes for American English
+class EnUsFontSizes extends FontSizes {}
+
+/// Spacings for American English
+class EnUsSpacings extends Spacings {}
+
+/// LineHeights for American English
+class EnUsLineHeights extends LineHeights {}
+
+// #region 实例化
+/// American English Fonts
+EnUsFonts f = EnUsFonts();
+
+/// American English FontSizes
+EnUsFontSizes s = EnUsFontSizes();
+
+/// American English Spacings
+EnUsSpacings sp = EnUsSpacings();
+
+/// American English LineHeights
+EnUsLineHeights h = EnUsLineHeights();
+// #endregion
+
 
 /// Text styles for American English language
 class EnUsTextStyles extends TextStyles {

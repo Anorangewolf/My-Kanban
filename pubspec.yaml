@@ -71,23 +71,23 @@ flutter:
   fonts:
     - family: NotoSerif
       fonts:
-        - asset: assets/fonts/en_us/NotoSerif_Condensed-Black.ttf
+        - asset: assets/fonts/en_us/NotoSerif-Black.ttf
           weight: 900
-        - asset: assets/fonts/en_us/NotoSerif_Condensed-Bold.ttf
+        - asset: assets/fonts/en_us/NotoSerif-Bold.ttf
           weight: 700
     - family: NotoSans
       fonts:
-        - asset: assets/fonts/en_us/NotoSans_Condensed-Bold.ttf
+        - asset: assets/fonts/en_us/NotoSans-Bold.ttf
           weight: 700
-        - asset: assets/fonts/en_us/NotoSans_Condensed-SemiBold.ttf
+        - asset: assets/fonts/en_us/NotoSans-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/en_us/NotoSans-Condensed-Medium.ttf
+        - asset: assets/fonts/en_us/NotoSans-Medium.ttf
           weight: 500
-        - asset: assets/fonts/en_us/NotoSans-Condensed-Regular.ttf
+        - asset: assets/fonts/en_us/NotoSans-Regular.ttf
           weight: 400
-        - asset: assets/fonts/en_us/NotoSans-Condensed-Light.ttf
+        - asset: assets/fonts/en_us/NotoSans-Light.ttf
           weight: 300
-        - asset: assets/fonts/en_us/NotoSans-Condensed-LightItalic.ttf
+        - asset: assets/fonts/en_us/NotoSans-LightItalic.ttf
           weight: 300
           style: italic
     - family: NotoSerifSC

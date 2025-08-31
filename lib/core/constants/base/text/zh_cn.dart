@@ -6,27 +6,43 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 class ZhCnFonts extends Fonts {
   @override
   Font get headline1 => Font(
-    family: 'NotoSans',
-    weight: FontWeight.w900,
+    family: 'NotoSansSC',
+    weight: FontWeight.w700,
+  );
+  @override
+  Font get headline2 => Font(
+    family: 'NotoSansSC',
+    weight: FontWeight.w600,
   );
   @override
   Font get title => Font(
-    family: 'NotoSans',
+    family: 'NotoSansSC',
+    weight: FontWeight.w500,
   );
   @override
   Font get bodyPrimary => Font(
-    family: 'NotoSans',
-    weight: FontWeight.w200,
-  );
-  @override
-  Font get bodyBold => Font(
+    family: 'NotoSansSC',
     weight: FontWeight.w300,
   );
   @override
+  Font get bodyBold => Font(
+    family: 'NotoSansSC',
+  );
+  @override
   Font get bodyItalic => Font(
-    family: 'NotoSans',
-    weight: FontWeight.w200,
+    family: 'NotoSansSC',
+    weight: FontWeight.w300,
     style: FontStyle.italic,
+  );
+  @override
+  Font get decorative1 => Font(
+    family: 'NotoSerifSC',
+    weight: FontWeight.w900,
+  );
+  @override
+  Font get decorative2 => Font(
+    family: 'NotoSerifSC',
+    weight: FontWeight.w700,
   );
 }
 
