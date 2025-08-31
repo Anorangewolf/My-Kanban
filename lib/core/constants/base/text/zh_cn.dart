@@ -7,31 +7,30 @@ class ZhCnFonts extends Fonts {
   @override
   Font get headline1 => Font(
     family: 'NotoSansSC',
-    weight: FontWeight.w700,
+    weight: FontWeight.w800,
   );
   @override
   Font get headline2 => Font(
     family: 'NotoSansSC',
-    weight: FontWeight.w600,
+    weight: FontWeight.w700,
   );
   @override
   Font get title => Font(
     family: 'NotoSansSC',
-    weight: FontWeight.w500,
+    weight: FontWeight.w600,
   );
   @override
   Font get bodyPrimary => Font(
     family: 'NotoSansSC',
-    weight: FontWeight.w300,
   );
   @override
   Font get bodyBold => Font(
     family: 'NotoSansSC',
+    weight: FontWeight.w500,
   );
   @override
   Font get bodyItalic => Font(
     family: 'NotoSansSC',
-    weight: FontWeight.w300,
     style: FontStyle.italic,
   );
   @override
@@ -72,11 +71,10 @@ ZhCnLineHeights h = ZhCnLineHeights();
 /// 简体中文文本格式
 class ZhCnTextStyles extends TextStyles {
   @override
-  TextStyle get loginPageButton => temp();
-}
-
-// HACK(Anorangewolf): 临时占位避免报错，必须修改.
-/// 临时占位
-TextStyle temp() {
-  return const TextStyle();
+  TextStyle get loginPageButton => customTextStyle(
+    f.bodyPrimary,
+    s.medium,
+    sp.split,
+    h.normal,
+  );
 }

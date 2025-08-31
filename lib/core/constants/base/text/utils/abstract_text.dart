@@ -43,9 +43,6 @@ abstract class Fonts {
 /// **字号类**
 /// 字号类包含了应用中使用的字号信息，
 /// 必须包含以下属性：
-/// - 加加加小：xxxSmall
-/// - 加加小：xxSmall
-/// - 加小：xSmall
 /// - 小：small
 /// - 小（特殊）：spSmall
 /// - 常用1：normal
@@ -60,47 +57,35 @@ abstract class Fonts {
 /// - 巨无霸：huge
 /// - 巨无霸（特殊）：spHuge
 abstract class FontSizes {
-  /// 加加加小
-  FontSize get xxxSmall => const FontSize(5);
-
-  /// 加加小
-  FontSize get xxSmall => const FontSize(6.5);
-
-  /// 加小
-  FontSize get xSmall => const FontSize(8);
-
   /// 小
-  FontSize get small => const FontSize(10);
+  FontSize get small => const FontSize(11);
 
   /// 小（特殊）
   FontSize get spSmall => const FontSize(9);
 
   /// 常用1
-  FontSize get normal => const FontSize(11);
+  FontSize get normal => const FontSize(14);
 
   /// 常用2
   FontSize get spNormal => const FontSize(12);
 
   /// 中
-  FontSize get medium => const FontSize(16);
+  FontSize get medium => const FontSize(18);
 
   /// 中（特殊）
-  FontSize get spMedium => const FontSize(18);
+  FontSize get spMedium => const FontSize(16);
 
   /// 大
-  FontSize get large => const FontSize(28);
+  FontSize get large => const FontSize(24);
 
   /// 大（特殊）
-  FontSize get spLarge => const FontSize(24);
+  FontSize get spLarge => const FontSize(21);
 
   /// 加大
-  FontSize get xLarge => const FontSize(36);
+  FontSize get xLarge => const FontSize(28);
 
   /// 加加大
-  FontSize get xxLarge => const FontSize(48);
-
-  /// 加加加大
-  FontSize get xxxLarge => const FontSize(72);
+  FontSize get xxLarge => const FontSize(32);
 
   /// 巨无霸
   FontSize get huge => const FontSize(96);
@@ -136,6 +121,9 @@ abstract class Spacings {
 
   /// 极宽
   Spacing get xlarge => const Spacing(8);
+
+  /// 拆分
+  Spacing get split => const Spacing(12);
 }
 
 /// **行高类**

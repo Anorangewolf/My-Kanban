@@ -22,8 +22,6 @@ class FontStyleViewer extends StatelessWidget {
             for (final f in [
               // 在这里添加要预览的主题
               TextFactory.fac,
-              TextFactory.zhSc,
-              TextFactory.enUs,
             ]) ...[
               // 在这里添加要预览的样式
               _buildTextRegion('loginPageButton', f.loginPageButton),
@@ -44,8 +42,8 @@ class FontStyleViewer extends StatelessWidget {
           Text(
             name,
             style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
               color: Colors.black87,
             ),
           ),

@@ -75,21 +75,6 @@ flutter:
           weight: 900
         - asset: assets/fonts/en_us/NotoSerif-Bold.ttf
           weight: 700
-    - family: NotoSans
-      fonts:
-        - asset: assets/fonts/en_us/NotoSans-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/en_us/NotoSans-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/en_us/NotoSans-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/en_us/NotoSans-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/en_us/NotoSans-Light.ttf
-          weight: 300
-        - asset: assets/fonts/en_us/NotoSans-LightItalic.ttf
-          weight: 300
-          style: italic
     - family: NotoSerifSC
       fonts:
         - asset: assets/fonts/zh_cn/NotoSerifSC-Black.ttf
@@ -98,16 +83,16 @@ flutter:
           weight: 700
     - family: NotoSansSC
       fonts:
+        - asset: assets/fonts/zh_cn/NotoSansSC-ExtraBold.ttf
+          weight: 800
         - asset: assets/fonts/zh_cn/NotoSansSC-Bold.ttf
           weight: 700
-        - asset: assets/fonts/zh_cn/NotoSansSC-SemiBold.ttf
+        - asset: assets/fonts/zh_cn/NotoSansSC-SemiBold-cut.ttf
           weight: 600
         - asset: assets/fonts/zh_cn/NotoSansSC-Medium-cut.ttf
           weight: 500
         - asset: assets/fonts/zh_cn/NotoSansSC-Regular-cut.ttf
           weight: 400
-        - asset: assets/fonts/zh_cn/NotoSansSC-Light-cut.ttf
-          weight: 300
 
   #   - family: Trajan Pro
   #     fonts:

@@ -25,7 +25,7 @@ class FontsViewer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             for (final t in [
-              // 这里添加要预览的语言的主题
+              // 这里添加要预览的语言
               ZhCnFonts(),
               EnUsFonts(),
             ]) ...[
@@ -34,6 +34,8 @@ class FontsViewer extends StatelessWidget {
               _buildTextRegion('正文主字体', t.bodyPrimary),
               _buildTextRegion('正文加粗字体', t.bodyBold),
               _buildTextRegion('正文斜体字体', t.bodyItalic),
+              _buildTextRegion('装饰性字体1', t.decorative1),
+              _buildTextRegion('装饰性字体2', t.decorative2),
             ],
           ],
         ),

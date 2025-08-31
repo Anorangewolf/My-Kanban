@@ -6,31 +6,25 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 class EnUsFonts extends Fonts {
   @override
   Font get headline1 => Font(
-    family: 'NotoSans',
     weight: FontWeight.w700,
   );
   @override
   Font get headline2 => Font(
-    family: 'NotoSans',
     weight: FontWeight.w600,
   );
   @override
   Font get title => Font(
-    family: 'NotoSans',
     weight: FontWeight.w500,
   );
   @override
   Font get bodyPrimary => Font(
-    family: 'NotoSans',
     weight: FontWeight.w300,
   );
   @override
   Font get bodyBold => Font(
-    family: 'NotoSans',
   );
   @override
   Font get bodyItalic => Font(
-    family: 'NotoSans',
     weight: FontWeight.w300,
     style: FontStyle.italic,
   );
@@ -41,7 +35,7 @@ class EnUsFonts extends Fonts {
   );
   @override
   Font get decorative2 => Font(
-    family: 'Roboto',
+    family: 'NotoSerif',
     weight: FontWeight.w700,
   );
 }
