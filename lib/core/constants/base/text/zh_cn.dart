@@ -71,10 +71,18 @@ ZhCnLineHeights h = ZhCnLineHeights();
 /// 简体中文文本格式
 class ZhCnTextStyles extends TextStyles {
   @override
-  TextStyle get loginPageButton => customTextStyle(
+  TextStyle get loginPageButton => dfCustomTxtSt(
     f.bodyPrimary,
     s.medium,
     sp.split,
     h.normal,
+  );
+  @override
+  TextStyle get logo => customTxtSt(
+    f.headline2,
+    s.large,
+    sp.normal,
+    h.normal,
+    TxtColor(colTheme.gray0.colorValue),
   );
 }

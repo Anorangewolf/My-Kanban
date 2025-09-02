@@ -13,8 +13,8 @@ class Base extends StatelessWidget {
     return Scaffold(
       body: Align(
         child: FractionallySizedBox(
-          widthFactor: 0.95,
-          heightFactor: 0.95,
+          widthFactor: 0.98,
+          heightFactor: 0.98,
           child: child,
         ),
       ),

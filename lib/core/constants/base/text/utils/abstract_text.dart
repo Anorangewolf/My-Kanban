@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
+import 'package:mykanban/features/presentation/theme/utils/index.dart';
+
+export 'package:mykanban/features/presentation/theme/utils/index.dart';
 
 /// **字体类**
 /// 字体类包含了应用中使用的字体信息，
@@ -155,12 +158,15 @@ abstract class LineHeights {
 }
 
 /// 文本样式
-TextStyle customTextStyle(
+TextStyle customTxtSt(
   Font font,
   FontSize fontSize,
   Spacing letterSpacing,
   LineHeight height,
+  TxtColor? color,
 ) {
+  var effectiveColor = color;
+  effectiveColor ??= colTheme.onPrimary;
   return TextStyle(
     fontFamily: font.family,
     fontWeight: font.weight,
@@ -168,13 +174,27 @@ TextStyle customTextStyle(
     fontSize: fontSize.value,
     letterSpacing: letterSpacing.value,
     height: height.value,
+    color: effectiveColor.color,
   );
+}
+
+/// 使用默认颜色的简化调用方法
+TextStyle dfCustomTxtSt(
+  Font font,
+  FontSize fontSize,
+  Spacing letterSpacing,
+  LineHeight height,
+) {
+  return customTxtSt(font, fontSize, letterSpacing, height, null);
 }
 
 /// **文本格式类**
 /// 直接用的，根据实际情况添加，类型务必具体到使用场景
 /// 例如：loginPageWelcome
 abstract class TextStyles {
+  /// Logo字体
+  TextStyle get logo;
+  
   /// 登陆界面按钮
   TextStyle get loginPageButton;
 }

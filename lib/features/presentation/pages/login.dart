@@ -1,46 +1,129 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
-/// 登陆界面
+/// Login page with side decoration
 class Login extends StatelessWidget {
-  /// 登陆界面构造函数
+  ///
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Base(
-      child: FractionallySizedBox(
-        widthFactor: 0.5,
-        heightFactor: 0.7,
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('登陆', style: TextFactory.fac.loginPageButton),
-              const SizedBox(height: 20),
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: '用户名',
-                  hintText: '请输入用户名',
-                ),
+      child:Align(
+        child:FractionallySizedBox(
+        widthFactor: 1,
+        heightFactor: 0.8,
+        child: Row(
+          children: [
+            Expanded(flex: 8, child: Container()),
+
+            // Left decoration area
+            Expanded(
+              flex: 55,
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: const Image(
+                        image: AssetImage(
+                          'assets/images/login_decoration.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: SizedBox(
+                        // HACK(Anorangewolf): 在dimens.dart完工后调用，通过固定大
+                        // 小的SizedBox，避免LOGO在窗口拉伸后被遮挡.
+                        child: Align(
+                          child: Text(
+                            'MyKanban',
+                            style: txtTheme.logo,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 20),
-              const TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: '密码',
-                  hintText: '请输入密码',
-                ),
+            ),
+
+            Expanded(
+              flex: 8,
+              child: Container(),
+            ),
+
+            // Right form area
+            Expanded(
+              flex: 21,
+              child: Column(
+                children: [
+                  // TODO(Anorangewolf): 上下添加空白Container占位压缩表单行间距.
+                  const Expanded(
+                    flex: 9,
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: CircleAvatar(
+                        radius: 50,
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    flex: 10,
+                    child: FractionallySizedBox(
+                      widthFactor: 1,
+                      heightFactor: 0.9,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Align(
+                              child:TextFormField(
+                              decoration: const InputDecoration(
+                                labelText: 'Username',
+                                border:UnderlineInputBorder(),
+                              ),
+                            ),
+                            ),
+                          ),
+
+                          Expanded(
+                            child: Align(
+                              child:TextFormField(
+                              decoration: const InputDecoration(
+                                labelText: 'Password',
+                                border:UnderlineInputBorder(),
+                              ),
+                            ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    flex: 8,
+                    // TODO(Anorangewolf): 制作登录按钮.
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.limeAccent,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('登陆'),
-              ),
-            ],
-          ),
+            ),
+
+            Expanded(flex: 8, child: Container()),
+          ],
         ),
+      ),
       ),
     );
   }

@@ -12,7 +12,7 @@ class Mykanban extends StatelessWidget {
     return MaterialApp(
       title: 'Mykanban',
       theme: ThemeData(
-        scaffoldBackgroundColor: theme.background.color,
+        scaffoldBackgroundColor: colTheme.background.color,
       ),
       // 路由配置
       routes: {

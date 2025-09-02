@@ -68,6 +68,8 @@ EnUsLineHeights h = EnUsLineHeights();
 class EnUsTextStyles extends TextStyles {
   @override
   TextStyle get loginPageButton => temp();
+  @override
+  TextStyle get logo => temp();
 }
 
 // HACK(Anorangewolf): 临时占位避免报错，必须修改.

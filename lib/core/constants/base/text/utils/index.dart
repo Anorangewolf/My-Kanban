@@ -13,3 +13,8 @@ class TextFactory {
   /// 主题工厂
   static TextStyles get fac => ZhCnTextStyles();
 }
+
+// #region 别称
+/// 应用的字体
+TextStyles txtTheme = TextFactory.fac;
+// #endregion
