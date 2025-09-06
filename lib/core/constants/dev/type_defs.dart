@@ -316,6 +316,7 @@ class Font {
     this.family,
     this.weight = FontWeight.normal,
     this.style = FontStyle.normal,
+    this.language = Language.zhCn,
   });
 
   // #region 字段类型定义
@@ -327,6 +328,9 @@ class Font {
 
   /// 字体样式
   FontStyle style;
+
+  /// 语言
+  Language language;
   // #endregion
 }
 
@@ -370,8 +374,8 @@ class Language {
   /// 简体中文
   static const Language zhCn = Language('zhCn');
 
-  /// English
-  static const Language enUs = Language('en');
+  /// American English
+  static const Language enUs = Language('enUs');
 
   /// 繁體中文
   static const Language zhTw = Language('zhTw');

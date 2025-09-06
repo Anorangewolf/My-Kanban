@@ -157,44 +157,63 @@ abstract class LineHeights {
   LineHeight get large => const LineHeight(2);
 }
 
-/// 文本样式
-TextStyle customTxtSt(
-  Font font,
-  FontSize fontSize,
-  Spacing letterSpacing,
-  LineHeight height,
-  TxtColor? color,
-) {
-  var effectiveColor = color;
-  effectiveColor ??= colTheme.onPrimary;
-  return TextStyle(
+/// 自定义文本样式
+class CustomTextStyle {
+  /// 由参数自定义文本样式
+  /// [font] 字体
+  /// [fontSize] 字号
+  /// [letterSpacing] 字符间距
+  /// [height] 行高
+  /// [color] 颜色
+  const CustomTextStyle(
+    this.font,
+    this.fontSize,
+    this.letterSpacing,
+    this.height,
+    this.color,
+  );
+
+  /// 使用默认颜色的简化调用方法
+  CustomTextStyle.dfCustomTxtSt(
+    this.font,
+    this.fontSize,
+    this.letterSpacing,
+    this.height,
+  ) : color = colTheme.onPrimary;
+
+  /// 字体
+  final Font font;
+
+  /// 字号
+  final FontSize fontSize;
+
+  /// 字符间距
+  final Spacing letterSpacing;
+
+  /// 行高
+  final LineHeight height;
+
+  /// 颜色
+  final TxtColor color;
+
+  /// 值
+  TextStyle get value => TextStyle(
     fontFamily: font.family,
     fontWeight: font.weight,
     fontStyle: font.style,
     fontSize: fontSize.value,
     letterSpacing: letterSpacing.value,
     height: height.value,
-    color: effectiveColor.color,
+    color: color.color,
   );
-}
-
-/// 使用默认颜色的简化调用方法
-TextStyle dfCustomTxtSt(
-  Font font,
-  FontSize fontSize,
-  Spacing letterSpacing,
-  LineHeight height,
-) {
-  return customTxtSt(font, fontSize, letterSpacing, height, null);
 }
 
 /// **文本格式类**
 /// 直接用的，根据实际情况添加，类型务必具体到使用场景
-/// 例如：loginPageWelcome
 abstract class TextStyles {
   /// Logo字体
-  TextStyle get logo;
-  
+  CustomTextStyle get logo;
+
   /// 登陆界面按钮
-  TextStyle get loginPageButton;
+  CustomTextStyle get loginPageButton;
 }
