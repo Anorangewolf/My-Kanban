@@ -5,6 +5,12 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 class AppDimens {
   /// 文本框尺寸常量
   static TextFieldDimens get textField => TextFieldDimens();
+
+  /// Expanded Flex 常量
+  static ExpandedFlexStatic get expandedFlex => ExpandedFlexStatic();
+
+  /// EdgeInsets 常量
+  static BorderStatic get border => BorderStatic();
 }
 
 // #region TextField
@@ -48,7 +54,7 @@ class TextFieldHeight extends DoubleProp<TextFieldHeight> {
   TextFieldHeight.fromFontSize(
     FontSize fontsize,
     LineHeight height,
-  ) : super(height.value * fontsize.value * 0.3528);
+  ) : super(height.value * fontsize.value);
 
   /// 根据文本样式计算文本框高度
   /// - textStyle: 文本样式
@@ -79,11 +85,11 @@ class TextFieldWidth extends DoubleProp<TextFieldWidth> {
     Language language,
     int lenth,
   ) : super(
-        lenth *
+        0.5 *
+            lenth *
             space.value *
             fontsize.value *
-            Language.aspectRatio[language]! *
-            0.3528,
+            Language.aspectRatio[language]!,
       );
 
   /// 根据文本样式和平均行长度计算文本框宽度
@@ -95,12 +101,73 @@ class TextFieldWidth extends DoubleProp<TextFieldWidth> {
   ) : this.fromFontSize(
         textStyle.fontSize,
         textStyle.letterSpacing,
-        textStyle.font.language,
+        textStyle.language,
         lenth,
       );
 
   @override
   TextFieldWidth create(double value) => TextFieldWidth(value);
+}
+// #endregion
+
+// #region Expanded Flex
+/// Expanded Flex
+class ExpandedFlex {
+  /// Expanded Flex
+  const ExpandedFlex(this.value);
+
+  /// 值
+  final int value;
+}
+
+/// Expanded Flex 常量
+class ExpandedFlexStatic {
+  /// 0.382序列4
+  ExpandedFlex get a4 => const ExpandedFlex(3);
+
+  /// 0.382序列3
+  ExpandedFlex get a3 => const ExpandedFlex(8);
+
+  /// 0.382序列2
+  ExpandedFlex get a2 => const ExpandedFlex(21);
+
+  /// 0.382序列1
+  ExpandedFlex get a1 => const ExpandedFlex(55);
+
+  /// 0.618序列4
+  ExpandedFlex get b4 => const ExpandedFlex(5);
+
+  /// 0.618序列3
+  ExpandedFlex get b3 => const ExpandedFlex(8);
+
+  /// 0.618序列2
+  ExpandedFlex get b2 => const ExpandedFlex(13);
+
+  /// 0.618序列1
+  ExpandedFlex get b1 => const ExpandedFlex(21);
+}
+// #endregion
+
+// #region EdgeInsets
+/// 边距
+class Border extends DoubleProp<Border> {
+  /// 边距
+  const Border(super.value);
+
+  @override
+  Border create(double value) => Border(value);
+}
+
+/// 边距常量
+class BorderStatic {
+  /// 4
+  Border get small => const Border(8);
+
+  /// 8
+  Border get medium => const Border(16);
+
+  /// 12
+  Border get large => const Border(24);
 }
 
 // #endregion

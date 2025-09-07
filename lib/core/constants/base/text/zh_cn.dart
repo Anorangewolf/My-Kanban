@@ -76,6 +76,7 @@ class ZhCnTextStyles extends TextStyles {
     s.medium,
     sp.split,
     h.normal,
+    Language.zhCn,
   );
   @override
   CustomTextStyle get logo => CustomTextStyle(
@@ -84,5 +85,6 @@ class ZhCnTextStyles extends TextStyles {
     sp.normal,
     h.normal,
     TxtColor(colTheme.gray0.colorValue),
+    Language.enUs,
   );
 }

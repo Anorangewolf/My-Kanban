@@ -316,7 +316,6 @@ class Font {
     this.family,
     this.weight = FontWeight.normal,
     this.style = FontStyle.normal,
-    this.language = Language.zhCn,
   });
 
   // #region 字段类型定义
@@ -328,9 +327,6 @@ class Font {
 
   /// 字体样式
   FontStyle style;
-
-  /// 语言
-  Language language;
   // #endregion
 }
 

@@ -160,25 +160,33 @@ abstract class LineHeights {
 /// 自定义文本样式
 class CustomTextStyle {
   /// 由参数自定义文本样式
-  /// [font] 字体
-  /// [fontSize] 字号
-  /// [letterSpacing] 字符间距
-  /// [height] 行高
-  /// [color] 颜色
+  /// - [font] 字体
+  /// - [fontSize] 字号
+  /// - [letterSpacing] 字符间距
+  /// - [height] 行高
+  /// - [color] 颜色
+  /// - [language] 语言 
   const CustomTextStyle(
     this.font,
     this.fontSize,
     this.letterSpacing,
     this.height,
     this.color,
+    this.language,
   );
 
-  /// 使用默认颜色的简化调用方法
+  /// 使用默认颜色
+  /// - [font] 字体
+  /// - [fontSize] 字号
+  /// - [letterSpacing] 字符间距
+  /// - [height] 行高
+  /// - [language] 语言 
   CustomTextStyle.dfCustomTxtSt(
     this.font,
     this.fontSize,
     this.letterSpacing,
     this.height,
+    this.language,
   ) : color = colTheme.onPrimary;
 
   /// 字体
@@ -195,6 +203,9 @@ class CustomTextStyle {
 
   /// 颜色
   final TxtColor color;
+
+  /// 语言
+  final Language language;
 
   /// 值
   TextStyle get value => TextStyle(

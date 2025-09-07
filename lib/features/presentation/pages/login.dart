@@ -36,13 +36,21 @@ class Login extends StatelessWidget {
                     Positioned.fill(
                       child: Align(
                         alignment: Alignment.bottomLeft,
+
                         child: SizedBox(
-                          width: AppDimens.textField
-                              .width(txtTheme.logo, 'MyKanban'.length)
-                              .value,
-                          height: AppDimens.textField
-                              .height(txtTheme.logo)
-                              .value,
+                          width:
+                              AppDimens.textField
+                                  .width(txtTheme.logo, 'MyKanban'.length)
+                                  .value +
+                              0.5 * AppDimens.border.medium.value,
+                          height:
+                              AppDimens.textField.height(txtTheme.logo).value +
+                              AppDimens.border.medium.value,
+                          // child: Container(
+                          //   decoration: const BoxDecoration(
+                          //     color: Colors.amber
+                          //   ),
+                          // ),
                           child: Align(
                             child: Text(
                               'MyKanban',
