@@ -1,53 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/features/presentation/pages/utils/page_utils.dart';
 
-/// Login page with side decoration
-class Login extends StatelessWidget {
-  ///
+/// 登录界面
+class Login extends StatefulWidget {
+  /// 登录界面
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  @override
+  void initState() {
+    super.initState();
+    WindowUtil.setResizable(resizable: false);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Base(
       child: Align(
         child: FractionallySizedBox(
-          widthFactor: 1,
+          widthFactor: 0.84,
           heightFactor: 0.8,
           child: Row(
             children: [
-              Expanded(flex: 8, child: Container()),
-
-              // Left decoration area
-              Expanded(
+              // 左侧区域
+              const Expanded(
                 flex: 55,
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: const Image(
-                          image: AssetImage(
-                            'assets/images/login_decoration.png',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-
-                    Positioned.fill(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Text(
-                            'MyKanban',
-                            style: txtTheme.logo,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                child: DecorationArea(),
               ),
 
               Expanded(
@@ -55,8 +37,8 @@ class Login extends StatelessWidget {
                 child: Container(),
               ),
 
-              // Right form area
-              // TODO(Anorangewolf): 固定右侧登录区域的比例.
+              // 右侧区域
+              // TODO(Anorangewolf): 优化右侧登录区域内部的比例.
               Expanded(
                 flex: 21,
                 child: Column(
@@ -67,6 +49,12 @@ class Login extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: CircleAvatar(
                           radius: 50,
+                          child: Image(
+                            image: AssetImage(
+                              'assets/images/default_avatar.png',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -126,7 +114,7 @@ class Login extends StatelessWidget {
                                 Expanded(
                                   child: TextButton(
                                     style: TextButton.styleFrom(
-                                      backgroundColor: colTheme.surface.color,
+                                      backgroundColor: colTheme.secondary.color,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(5),
                                       ),
@@ -158,12 +146,38 @@ class Login extends StatelessWidget {
                   ],
                 ),
               ),
-
-              Expanded(flex: 8, child: Container()),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+/// 装饰图片和logo
+class DecorationArea extends StatelessWidget {
+  /// 装饰图片和logo
+  const DecorationArea({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: const Image(
+              image: AssetImage('assets/images/login_decoration.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 10,
+          left: 10,
+          child: Text('MyKanban', style: txtTheme.logo),
+        ),
+      ],
     );
   }
 }

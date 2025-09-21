@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// 基础出血组件
 class Base extends StatelessWidget {
-  /// 基础出血组件构造函数
+  /// 基础出血组件
   const Base({super.key, this.child});
 
   /// 子组件

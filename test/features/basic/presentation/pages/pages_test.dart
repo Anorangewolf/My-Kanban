@@ -25,5 +25,6 @@ class PagesTest extends StatelessWidget {
 }
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const PagesTest());
 }
