@@ -358,3 +358,28 @@ class LineHeight extends DoubleProp<LineHeight> {
 }
 
 // #endregion
+
+/// 语言类型
+class Language {
+  /// 语言类型
+  const Language(this.value);
+
+  /// 值
+  final String value;
+
+  /// 简体中文
+  static const Language zhCn = Language('zhCn');
+
+  /// American English
+  static const Language enUs = Language('enUs');
+
+  /// 繁體中文
+  static const Language zhTw = Language('zhTw');
+
+  /// 语言字体平均宽高比
+  static const Map<Language, double> aspectRatio = {
+    Language.zhCn: 1,
+    Language.enUs: 0.8,
+    Language.zhTw: 1,
+  };
+}

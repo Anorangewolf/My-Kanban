@@ -123,7 +123,7 @@ class _LoginState extends State<Login> {
                                       padding: const EdgeInsets.all(8),
                                       child: Text(
                                         'Login',
-                                        style: txtTheme.loginPageButton,
+                                        style: txtTheme.loginPageButton.value,
                                       ),
                                     ),
                                     onPressed: () {},
@@ -175,7 +175,7 @@ class DecorationArea extends StatelessWidget {
         Positioned(
           bottom: 10,
           left: 10,
-          child: Text('MyKanban', style: txtTheme.logo),
+          child: Text('MyKanban', style: txtTheme.logo.value),
         ),
       ],
     );

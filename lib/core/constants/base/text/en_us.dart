@@ -21,8 +21,7 @@ class EnUsFonts extends Fonts {
     weight: FontWeight.w300,
   );
   @override
-  Font get bodyBold => Font(
-  );
+  Font get bodyBold => Font();
   @override
   Font get bodyItalic => Font(
     weight: FontWeight.w300,
@@ -63,17 +62,22 @@ EnUsSpacings sp = EnUsSpacings();
 EnUsLineHeights h = EnUsLineHeights();
 // #endregion
 
-
 /// Text styles for American English language
 class EnUsTextStyles extends TextStyles {
   @override
-  TextStyle get loginPageButton => temp();
+  CustomTextStyle get loginPageButton => temp();
   @override
-  TextStyle get logo => temp();
+  CustomTextStyle get logo => temp();
 }
 
 // HACK(Anorangewolf): 临时占位避免报错，必须修改.
 /// 临时占位
-TextStyle temp() {
-  return const TextStyle();
+CustomTextStyle temp() {
+  return CustomTextStyle.dfCustomTxtSt(
+    f.headline1,
+    s.normal,
+    sp.normal,
+    h.normal,
+    Language.enUs,
+  );
 }
