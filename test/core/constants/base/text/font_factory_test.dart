@@ -3,6 +3,7 @@
 // 以运行快速启动测试
 // 运行后输入"r"以进行热更新
 import 'package:flutter/material.dart';
+import 'package:mykanban/core/constants/base/text/utils/abstract_text.dart';
 import 'package:mykanban/core/constants/base/text/utils/index.dart';
 
 class FontStyleViewer extends StatelessWidget {
@@ -22,8 +23,6 @@ class FontStyleViewer extends StatelessWidget {
             for (final f in [
               // 在这里添加要预览的主题
               TextFactory.fac,
-              TextFactory.zhSc,
-              TextFactory.enUs,
             ]) ...[
               // 在这里添加要预览的样式
               _buildTextRegion('loginPageButton', f.loginPageButton),
@@ -34,7 +33,7 @@ class FontStyleViewer extends StatelessWidget {
     );
   }
 
-  Widget _buildTextRegion(String name, TextStyle textstyle) {
+  Widget _buildTextRegion(String name, CustomTextStyle textstyle) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -44,12 +43,12 @@ class FontStyleViewer extends StatelessWidget {
           Text(
             name,
             style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
               color: Colors.black87,
             ),
           ),
-          Text(sampleText, style: textstyle),
+          Text(sampleText, style: textstyle.value),
         ],
       ),
     );

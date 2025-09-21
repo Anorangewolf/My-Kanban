@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/core/constants/dev/type_defs.dart';
+import 'package:mykanban/features/presentation/theme/utils/index.dart';
+
+export 'package:mykanban/features/presentation/theme/utils/index.dart';
 
 /// **字体类**
 /// 字体类包含了应用中使用的字体信息，
@@ -15,40 +18,34 @@ import 'package:mykanban/core/constants/dev/type_defs.dart';
 /// - 装饰性文字字体2：decorative2
 /// 字体属于Font类，数据格式见Font类注释。
 abstract class Fonts {
-  /// 标题字体1，字号大于48时使用
+  /// 标题
   Font get headline1;
 
-  /// 标题字体2，字号介于24-48之间时使用
+  /// 副标题
   Font get headline2;
 
-  /// 特殊标题字体，应用显示范围受限，标题字号小于24时使用
-  Font get headlineSP;
-
-  /// 小标题字体
+  /// 小标题
   Font get title;
 
-  /// 特殊小标题字体，应用显示范围受限，小标题字号小于12时使用
-  Font get titleSP;
-
-  /// 正文主字体
+  /// 正文
   Font get bodyPrimary;
 
-  /// 正文辅助字体
-  Font get bodySecondary;
+  /// 正文加粗
+  Font get bodyBold;
 
-  /// 装饰性文字字体1
+  /// 正文斜体
+  Font get bodyItalic;
+
+  /// 装饰性文字1
   Font get decorative1;
 
-  /// 装饰性文字字体2
+  /// 装饰性文字2
   Font get decorative2;
 }
 
 /// **字号类**
 /// 字号类包含了应用中使用的字号信息，
 /// 必须包含以下属性：
-/// - 加加加小：xxxSmall
-/// - 加加小：xxSmall
-/// - 加小：xSmall
 /// - 小：small
 /// - 小（特殊）：spSmall
 /// - 常用1：normal
@@ -63,53 +60,41 @@ abstract class Fonts {
 /// - 巨无霸：huge
 /// - 巨无霸（特殊）：spHuge
 abstract class FontSizes {
-  /// 加加加小
-  FontSize get xxxSmall => 5;
-
-  /// 加加小
-  FontSize get xxSmall => 6.5;
-
-  /// 加小
-  FontSize get xSmall => 8;
-
   /// 小
-  FontSize get small => 10;
+  FontSize get small => const FontSize(11);
 
   /// 小（特殊）
-  FontSize get spSmall => 9;
+  FontSize get spSmall => const FontSize(9);
 
   /// 常用1
-  FontSize get normal => 11;
+  FontSize get normal => const FontSize(14);
 
   /// 常用2
-  FontSize get spNormal => 12;
+  FontSize get spNormal => const FontSize(12);
 
   /// 中
-  FontSize get medium => 16;
+  FontSize get medium => const FontSize(18);
 
   /// 中（特殊）
-  FontSize get spMedium => 18;
+  FontSize get spMedium => const FontSize(16);
 
   /// 大
-  FontSize get large => 28;
+  FontSize get large => const FontSize(24);
 
   /// 大（特殊）
-  FontSize get spLarge => 24;
+  FontSize get spLarge => const FontSize(21);
 
   /// 加大
-  FontSize get xLarge => 36;
+  FontSize get xLarge => const FontSize(28);
 
   /// 加加大
-  FontSize get xxLarge => 48;
-
-  /// 加加加大
-  FontSize get xxxLarge => 72;
+  FontSize get xxLarge => const FontSize(32);
 
   /// 巨无霸
-  FontSize get huge => 96;
+  FontSize get huge => const FontSize(96);
 
   /// 巨无霸（特殊）
-  FontSize get spHuge => 118;
+  FontSize get spHuge => const FontSize(118);
 }
 
 /// **字符间距类**
@@ -123,73 +108,123 @@ abstract class FontSizes {
 /// - 极宽：xLarge
 abstract class Spacings {
   /// 极窄
-  Spacing get xSmall => 0.75;
+  Spacing get xsmall => const Spacing(0.75);
 
   /// 窄
-  Spacing get small => 1.5;
+  Spacing get small => const Spacing(1.5);
 
   /// 常用
-  Spacing get normal => 2;
+  Spacing get normal => const Spacing(2);
 
   /// 中
-  Spacing get medium => 4;
+  Spacing get medium => const Spacing(4);
 
   /// 宽
-  Spacing get large => 5;
+  Spacing get large => const Spacing(5);
 
   /// 极宽
-  Spacing get xLarge => 8;
+  Spacing get xlarge => const Spacing(8);
+
+  /// 拆分
+  Spacing get split => const Spacing(12);
 }
 
 /// **行高类**
 /// 行高类包含了应用中使用的行高信息，以倍数的形式表示
 abstract class LineHeights {
   /// 单倍行距
-  LineHeight get small => 1;
+  LineHeight get small => const LineHeight(1);
 
   /// 1.1倍行距
-  LineHeight get spSmall => 1.1;
+  LineHeight get spSmall => const LineHeight(1.1);
 
   /// 常用
-  LineHeight get normal => 1.2;
+  LineHeight get normal => const LineHeight(1.2);
 
   /// 1.25倍行距
-  LineHeight get spNormal => 1.25;
+  LineHeight get spNormal => const LineHeight(1.25);
 
   /// 1.5倍行距
-  LineHeight get medium => 1.5;
+  LineHeight get medium => const LineHeight(1.5);
 
   /// 1.6倍行距
-  LineHeight get spMedium => 1.6;
+  LineHeight get spMedium => const LineHeight(1.6);
 
   /// 1.75倍行距
-  LineHeight get spLarge => 1.75;
+  LineHeight get spLarge => const LineHeight(1.75);
 
   /// 2倍行距
-  LineHeight get large => 2;
+  LineHeight get large => const LineHeight(2);
 }
 
-/// 文本样式
-TextStyle customTextStyle(
-  Font font,
-  FontSize fontSize,
-  Spacing letterSpacing,
-  LineHeight height,
-) {
-  return TextStyle(
+/// 自定义文本样式
+class CustomTextStyle {
+  /// 由参数自定义文本样式
+  /// - [font] 字体
+  /// - [fontSize] 字号
+  /// - [letterSpacing] 字符间距
+  /// - [height] 行高
+  /// - [color] 颜色
+  /// - [language] 语言 
+  const CustomTextStyle(
+    this.font,
+    this.fontSize,
+    this.letterSpacing,
+    this.height,
+    this.color,
+    this.language,
+  );
+
+  /// 使用默认颜色
+  /// - [font] 字体
+  /// - [fontSize] 字号
+  /// - [letterSpacing] 字符间距
+  /// - [height] 行高
+  /// - [language] 语言 
+  CustomTextStyle.dfCustomTxtSt(
+    this.font,
+    this.fontSize,
+    this.letterSpacing,
+    this.height,
+    this.language,
+  ) : color = colTheme.onPrimary;
+
+  /// 字体
+  final Font font;
+
+  /// 字号
+  final FontSize fontSize;
+
+  /// 字符间距
+  final Spacing letterSpacing;
+
+  /// 行高
+  final LineHeight height;
+
+  /// 颜色
+  final TxtColor color;
+
+  /// 语言
+  final Language language;
+
+  /// 值
+  TextStyle get value => TextStyle(
     fontFamily: font.family,
     fontWeight: font.weight,
     fontStyle: font.style,
-    fontSize: fontSize,
-    letterSpacing: letterSpacing,
-    height: height,
+    fontSize: fontSize.value,
+    letterSpacing: letterSpacing.value,
+    height: height.value,
+    color: color.color,
   );
 }
 
 /// **文本格式类**
 /// 直接用的，根据实际情况添加，类型务必具体到使用场景
-/// 例如：loginPageWelcome
 abstract class TextStyles {
+  /// Logo字体
+  CustomTextStyle get logo;
+
   /// 登陆界面按钮
-  TextStyle get loginPageButton;
+  CustomTextStyle get loginPageButton;
 }

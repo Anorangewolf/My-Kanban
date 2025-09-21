@@ -20,3 +20,10 @@ class ColorFactory {
     return LightColorTheme(basecolor);
   }
 }
+
+// #region 实例化
+/// 应用的颜色主题
+ColorTheme colTheme = ColorFactory.fac(
+  ThemeColor.dfThemeColor,
+);
+// #endregion

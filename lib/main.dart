@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mykanban/app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // 全局初始化
   // WidgetsFlutterBinding.ensureInitialized();
 
